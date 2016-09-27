@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2327e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HrT-ZX-UKb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sound Cloud Login View Controller-->
+        <scene sceneID="ePB-dD-GVB">
+            <objects>
+                <viewController id="3j8-29-ZmE" customClass="SoundCloudLoginViewController" customModule="SoundCloud" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Btw-qP-B1q"/>
+                        <viewControllerLayoutGuide type="bottom" id="5En-gF-sa3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Myp-eO-etv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hw2-Qv-WhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="709"/>
+        </scene>
+        <!--First View Controller-->
+        <scene sceneID="1jX-6A-bQ7">
+            <objects>
+                <viewController id="zKc-62-aEV" customClass="FirstViewController" customModule="SoundCloud" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y7p-5K-FWF"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dwe-T6-y32"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fjf-Oo-hO4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="wJi-OX-LpZ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="aQN-ps-Ons"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjk-Bn-cog">
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="22"/>
+                                <state key="normal" title="Sing in">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="3j8-29-ZmE" kind="show" identifier="LoginSegue" action="showDetailViewController:sender:" id="4zd-Um-8ea"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.45526013289070433" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vjk-Bn-cog" firstAttribute="centerX" secondItem="Fjf-Oo-hO4" secondAttribute="centerX" id="Bzp-Dj-wIC"/>
+                            <constraint firstAttribute="trailing" secondItem="wJi-OX-LpZ" secondAttribute="trailing" constant="80" id="P64-X8-Xpi"/>
+                            <constraint firstItem="vjk-Bn-cog" firstAttribute="centerY" secondItem="Fjf-Oo-hO4" secondAttribute="centerY" id="THp-ca-B7y"/>
+                            <constraint firstItem="wJi-OX-LpZ" firstAttribute="top" secondItem="y7p-5K-FWF" secondAttribute="bottom" constant="80" id="kzh-GK-phq"/>
+                            <constraint firstItem="wJi-OX-LpZ" firstAttribute="leading" secondItem="Fjf-Oo-hO4" secondAttribute="leading" constant="80" id="y67-IS-LZb"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LWE-qT-Q5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-800" y="710"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="83R-ra-6mG">
+            <objects>
+                <viewController id="US4-ku-8O8" customClass="MainViewController" customModule="SoundCloud" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4jd-yi-TJa"/>
+                        <viewControllerLayoutGuide type="bottom" id="4fO-M1-0bc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cWI-n0-3gd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="muq-CZ-yHT">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="US4-ku-8O8" id="2e7-ir-lD5"/>
+                                    <outlet property="delegate" destination="US4-ku-8O8" id="0qc-4w-qYp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="muq-CZ-yHT" firstAttribute="top" secondItem="4jd-yi-TJa" secondAttribute="bottom" constant="-64" id="L1v-2G-Lrl"/>
+                            <constraint firstItem="4fO-M1-0bc" firstAttribute="top" secondItem="muq-CZ-yHT" secondAttribute="bottom" id="dS4-qh-lJs"/>
+                            <constraint firstItem="muq-CZ-yHT" firstAttribute="leading" secondItem="cWI-n0-3gd" secondAttribute="leading" id="v0Y-da-84j"/>
+                            <constraint firstAttribute="trailing" secondItem="muq-CZ-yHT" secondAttribute="trailing" id="xJj-qx-2wc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bsj-Gb-rn6"/>
+                    <connections>
+                        <outlet property="tableView" destination="muq-CZ-yHT" id="zRZ-Md-I2D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bzr-Ft-CF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="1409"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rZ2-Gc-ZLf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HrT-ZX-UKb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jei-ZB-x2w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="US4-ku-8O8" kind="relationship" relationship="rootViewController" id="Uif-ch-bN7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RHC-Vf-f7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-802.39999999999998" y="1409.1454272863568"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo.png" width="800" height="500"/>
+    </resources>
+</document>
