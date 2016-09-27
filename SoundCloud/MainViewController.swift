@@ -21,23 +21,31 @@ class MainViewController: UIViewController {
         self.title = "USER INFO"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.viewModel.requestMe(self.viewModel.token, tableView: tableView)
+        self.viewModel.getData(self.viewModel.token, tableView: tableView)
     }
-    
 }
 
 extension MainViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.viewModel.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell") as! ActivityTableViewCell
+        cell.titleLabel.text = "\(self.viewModel.arrayActivity[indexPath.row].userName) posted \(self.viewModel.arrayActivity[indexPath.row].type)"
+        let url = NSURL.init(string: self.viewModel.arrayActivity[indexPath.row].urlUser)
+        cell.imageViewForUser.sd_setImageWithURL(url)
+        cell.mainImageView.sd_setImageWithURL(url)
         return cell
     }
 }
 
 extension MainViewController: UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 200
+    }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier("Header") as! HeaderTableViewCell
@@ -56,6 +64,7 @@ extension MainViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 60
     }
+    
 }
 
 
@@ -63,5 +72,6 @@ private extension MainViewController {
     
     func setupTableView(tableView:UITableView){
         tableView.registerNib(UINib(nibName: "HeaderTableViewCell",bundle: nil), forHeaderFooterViewReuseIdentifier: "Header")
+        tableView.registerNib(UINib(nibName: "ActivityTableViewCell",bundle:nil), forCellReuseIdentifier: "ActivityCell")
     }
 }
