@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2327e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HrT-ZX-UKb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2327e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zKc-62-aEV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -60,6 +60,7 @@
                             <constraint firstItem="wJi-OX-LpZ" firstAttribute="leading" secondItem="Fjf-Oo-hO4" secondAttribute="leading" constant="80" id="y67-IS-LZb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="iNc-rQ-5we"/>
                     <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWE-qT-Q5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -69,7 +70,7 @@
         <!--Main View Controller-->
         <scene sceneID="83R-ra-6mG">
             <objects>
-                <viewController id="US4-ku-8O8" customClass="MainViewController" customModule="SoundCloud" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" id="US4-ku-8O8" customClass="MainViewController" customModule="SoundCloud" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4jd-yi-TJa"/>
                         <viewControllerLayoutGuide type="bottom" id="4fO-M1-0bc"/>
@@ -78,48 +79,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="muq-CZ-yHT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dlj-YL-d24">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="US4-ku-8O8" id="2e7-ir-lD5"/>
-                                    <outlet property="delegate" destination="US4-ku-8O8" id="0qc-4w-qYp"/>
+                                    <outlet property="dataSource" destination="US4-ku-8O8" id="IQH-27-fnW"/>
+                                    <outlet property="delegate" destination="US4-ku-8O8" id="mch-FK-gfB"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="muq-CZ-yHT" firstAttribute="top" secondItem="4jd-yi-TJa" secondAttribute="bottom" constant="-64" id="L1v-2G-Lrl"/>
-                            <constraint firstItem="4fO-M1-0bc" firstAttribute="top" secondItem="muq-CZ-yHT" secondAttribute="bottom" id="dS4-qh-lJs"/>
-                            <constraint firstItem="muq-CZ-yHT" firstAttribute="leading" secondItem="cWI-n0-3gd" secondAttribute="leading" id="v0Y-da-84j"/>
-                            <constraint firstAttribute="trailing" secondItem="muq-CZ-yHT" secondAttribute="trailing" id="xJj-qx-2wc"/>
+                            <constraint firstItem="dlj-YL-d24" firstAttribute="top" secondItem="4jd-yi-TJa" secondAttribute="bottom" constant="-64" id="d47-Oy-7Nc"/>
+                            <constraint firstItem="4fO-M1-0bc" firstAttribute="top" secondItem="dlj-YL-d24" secondAttribute="bottom" id="eGf-qG-U4M"/>
+                            <constraint firstAttribute="trailing" secondItem="dlj-YL-d24" secondAttribute="trailing" id="slf-Bx-s7l"/>
+                            <constraint firstItem="dlj-YL-d24" firstAttribute="leading" secondItem="cWI-n0-3gd" secondAttribute="leading" id="txI-VS-Lv1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bsj-Gb-rn6"/>
+                    <navigationItem key="navigationItem" id="hfU-7r-Amf"/>
                     <connections>
-                        <outlet property="tableView" destination="muq-CZ-yHT" id="zRZ-Md-I2D"/>
+                        <outlet property="tableView" destination="dlj-YL-d24" id="u6P-bt-WjZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bzr-Ft-CF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="1409"/>
+            <point key="canvasLocation" x="33" y="1475"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="rZ2-Gc-ZLf">
+        <scene sceneID="EL3-nm-sAQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HrT-ZX-UKb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0ug-Xh-jPu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jei-ZB-x2w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GrQ-k8-8Fu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="US4-ku-8O8" kind="relationship" relationship="rootViewController" id="Uif-ch-bN7"/>
+                        <segue destination="US4-ku-8O8" kind="relationship" relationship="rootViewController" id="sb1-Jk-B6V"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RHC-Vf-f7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vh9-zC-7pv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-802.39999999999998" y="1409.1454272863568"/>
+            <point key="canvasLocation" x="-801" y="1475"/>
         </scene>
     </scenes>
     <resources>

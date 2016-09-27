@@ -6,6 +6,7 @@
 target 'SoundCloud' do
 	pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :tag => '3.5.0'
 	pod 'SwiftyJSON'
+	pod 'SDWebImage/WebP'
 end
 
 post_install do |installer|

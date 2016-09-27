@@ -8,14 +8,16 @@
 
 import UIKit
 
-class HeaderTableView: UITableViewHeaderFooterView {
+class HeaderTableViewCell: UITableViewHeaderFooterView {
 
+    @IBOutlet weak var followersCountLabel: UILabel!
+    @IBOutlet weak var followingCountLabel: UILabel!
     @IBOutlet weak var imageViewForUserImage: UIImageView!
     @IBOutlet weak var labelForUserName: UILabel!
     @IBOutlet weak var labelForUserNickName: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
+    
 }

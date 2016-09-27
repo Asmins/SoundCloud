@@ -85,9 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-SoundCloud/Alamofire.framework"
+  install_framework "Pods-SoundCloud/SDWebImage.framework"
   install_framework "Pods-SoundCloud/SwiftyJSON.framework"
+  install_framework "Pods-SoundCloud/libwebp.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-SoundCloud/Alamofire.framework"
+  install_framework "Pods-SoundCloud/SDWebImage.framework"
   install_framework "Pods-SoundCloud/SwiftyJSON.framework"
+  install_framework "Pods-SoundCloud/libwebp.framework"
 fi

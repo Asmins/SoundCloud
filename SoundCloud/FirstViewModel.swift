@@ -25,20 +25,4 @@ class FirstViewModel {
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         viewController.presentViewController(alertController, animated: true, completion: nil)
     }
-    
-    func requestMe(token: String) {
-        let url = NSURL(string: "https://api.soundcloud.com/me.json?oauth_token=\(token)")!
-        
-        Alamofire.request(.GET, url).responseJSON{ response in
-            if response.data != nil{
-                self.parseJson(response.data!)
-            }
-        }
-    }
-    
-    func parseJson(data:NSData){
-        let json = JSON(data: data)
-        print(json)
-    }
-    
 }

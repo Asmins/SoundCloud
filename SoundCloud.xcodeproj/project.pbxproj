@@ -13,6 +13,8 @@
 		844386F41D9532980046D34D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844386F21D9532980046D34D /* Main.storyboard */; };
 		844386F61D9532980046D34D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844386F51D9532980046D34D /* Assets.xcassets */; };
 		844386F91D9532980046D34D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844386F71D9532980046D34D /* LaunchScreen.storyboard */; };
+		8482D36D1D9A5856005C57AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482D36C1D9A5856005C57AB /* User.swift */; };
+		8482D36F1D9A5981005C57AB /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482D36E1D9A5981005C57AB /* MainViewModel.swift */; };
 		848714451D954DC0001FA63D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848714411D954DC0001FA63D /* Alamofire.framework */; };
 		848714461D954DC0001FA63D /* OnePasswordExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848714421D954DC0001FA63D /* OnePasswordExtension.framework */; };
 		848714471D954DC0001FA63D /* Soundcloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848714431D954DC0001FA63D /* Soundcloud.framework */; };
@@ -23,8 +25,8 @@
 		849B89631D994ABC008D3A51 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B89621D994ABC008D3A51 /* FirstViewController.swift */; };
 		849B89651D994B43008D3A51 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B89641D994B43008D3A51 /* FirstViewModel.swift */; };
 		849B89671D995A4E008D3A51 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B89661D995A4E008D3A51 /* MainViewController.swift */; };
-		849B896B1D9962EA008D3A51 /* HeaderTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849B896A1D9962EA008D3A51 /* HeaderTableView.xib */; };
-		849B896D1D99646C008D3A51 /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B896C1D99646C008D3A51 /* HeaderTableView.swift */; };
+		849B896B1D9962EA008D3A51 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849B896A1D9962EA008D3A51 /* HeaderTableViewCell.xib */; };
+		849B896D1D99646C008D3A51 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B896C1D99646C008D3A51 /* HeaderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		844386F51D9532980046D34D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		844386F81D9532980046D34D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844386FA1D9532980046D34D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8482D36C1D9A5856005C57AB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8482D36E1D9A5981005C57AB /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		848714411D954DC0001FA63D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/SoundCloud-acqcewjejvflmlcwbcvrmvokyntk/Build/Products/Debug-iphonesimulator/Alamofire.framework"; sourceTree = "<group>"; };
 		848714421D954DC0001FA63D /* OnePasswordExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OnePasswordExtension.framework; path = "../../Library/Developer/Xcode/DerivedData/SoundCloud-acqcewjejvflmlcwbcvrmvokyntk/Build/Products/Debug-iphonesimulator/OnePasswordExtension.framework"; sourceTree = "<group>"; };
 		848714431D954DC0001FA63D /* Soundcloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Soundcloud.framework; path = "../../Library/Developer/Xcode/DerivedData/SoundCloud-acqcewjejvflmlcwbcvrmvokyntk/Build/Products/Debug-iphonesimulator/Soundcloud.framework"; sourceTree = "<group>"; };
@@ -47,8 +51,8 @@
 		849B89621D994ABC008D3A51 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		849B89641D994B43008D3A51 /* FirstViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
 		849B89661D995A4E008D3A51 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		849B896A1D9962EA008D3A51 /* HeaderTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderTableView.xib; sourceTree = "<group>"; };
-		849B896C1D99646C008D3A51 /* HeaderTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
+		849B896A1D9962EA008D3A51 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
+		849B896C1D99646C008D3A51 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		88183481390DC98A25093A95 /* Pods-SoundCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCloud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCloud/Pods-SoundCloud.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,8 +138,8 @@
 		849B89691D9962DA008D3A51 /* TalbeViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				849B896A1D9962EA008D3A51 /* HeaderTableView.xib */,
-				849B896C1D99646C008D3A51 /* HeaderTableView.swift */,
+				849B896A1D9962EA008D3A51 /* HeaderTableViewCell.xib */,
+				849B896C1D99646C008D3A51 /* HeaderTableViewCell.swift */,
 			);
 			name = TalbeViewCell;
 			sourceTree = "<group>";
@@ -145,6 +149,8 @@
 			children = (
 				849B89571D98FF27008D3A51 /* SoundCloudAuthenticator.swift */,
 				849B89641D994B43008D3A51 /* FirstViewModel.swift */,
+				8482D36C1D9A5856005C57AB /* User.swift */,
+				8482D36E1D9A5981005C57AB /* MainViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -233,7 +239,7 @@
 				844386F91D9532980046D34D /* LaunchScreen.storyboard in Resources */,
 				844386F61D9532980046D34D /* Assets.xcassets in Resources */,
 				849B89611D994902008D3A51 /* Logo.png in Resources */,
-				849B896B1D9962EA008D3A51 /* HeaderTableView.xib in Resources */,
+				849B896B1D9962EA008D3A51 /* HeaderTableViewCell.xib in Resources */,
 				844386F41D9532980046D34D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,7 +303,9 @@
 				849B89631D994ABC008D3A51 /* FirstViewController.swift in Sources */,
 				849B89651D994B43008D3A51 /* FirstViewModel.swift in Sources */,
 				844386F11D9532980046D34D /* ViewController.swift in Sources */,
-				849B896D1D99646C008D3A51 /* HeaderTableView.swift in Sources */,
+				849B896D1D99646C008D3A51 /* HeaderTableViewCell.swift in Sources */,
+				8482D36F1D9A5981005C57AB /* MainViewModel.swift in Sources */,
+				8482D36D1D9A5856005C57AB /* User.swift in Sources */,
 				844386EF1D9532980046D34D /* AppDelegate.swift in Sources */,
 				849B895A1D99016B008D3A51 /* SoundCloudLoginViewController.swift in Sources */,
 				849B89581D98FF27008D3A51 /* SoundCloudAuthenticator.swift in Sources */,

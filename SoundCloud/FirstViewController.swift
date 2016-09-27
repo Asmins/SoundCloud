@@ -14,7 +14,6 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -30,18 +29,19 @@ class FirstViewController: UIViewController {
             controller.delegate = self
         }
     }
-    
 }
 
 extension FirstViewController: SoundCloudLoginResultsDelegate {
 
     func didSucceed(loginViewController: SoundCloudLoginViewController, authResult: AuthenticationResult) {
-        self.viewModel.requestMe(authResult.value)
-        //showAlert("Authenticated!", message: "Received token \(authResult.value)")
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("MainView") as! MainViewController
+        let navControler = UINavigationController(rootViewController: controller)
+        controller.viewModel.token = authResult.value
+        self.presentViewController(navControler, animated: true, completion: nil)
     }
     
     func didFail(loginViewController: SoundCloudLoginViewController) {
-        //showAlert("Error", message: "Failed to authenticate")
+    
     }
     
 }
