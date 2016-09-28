@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		81A29AFF1828AC2ADD1D02BF /* Pods_SoundCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C605E0B5DE10E78D662B06D /* Pods_SoundCloud.framework */; };
+		84180D241D9BBD67004C0CA0 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84180D231D9BBD67004C0CA0 /* Playlist.swift */; };
 		844386EF1D9532980046D34D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844386EE1D9532980046D34D /* AppDelegate.swift */; };
 		844386F11D9532980046D34D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844386F01D9532980046D34D /* ViewController.swift */; };
 		844386F41D9532980046D34D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844386F21D9532980046D34D /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		38ABA053A4AD158026268CAB /* Pods-SoundCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCloud.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCloud/Pods-SoundCloud.release.xcconfig"; sourceTree = "<group>"; };
 		6C605E0B5DE10E78D662B06D /* Pods_SoundCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84180D231D9BBD67004C0CA0 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		844386EB1D9532980046D34D /* SoundCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844386EE1D9532980046D34D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844386F01D9532980046D34D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				8482D36C1D9A5856005C57AB /* User.swift */,
 				8482D36E1D9A5981005C57AB /* MainViewModel.swift */,
 				84F5F8AD1D9A95E100E52B86 /* Activity.swift */,
+				84180D231D9BBD67004C0CA0 /* Playlist.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				849B89671D995A4E008D3A51 /* MainViewController.swift in Sources */,
+				84180D241D9BBD67004C0CA0 /* Playlist.swift in Sources */,
 				849B89631D994ABC008D3A51 /* FirstViewController.swift in Sources */,
 				849B89651D994B43008D3A51 /* FirstViewModel.swift in Sources */,
 				844386F11D9532980046D34D /* ViewController.swift in Sources */,

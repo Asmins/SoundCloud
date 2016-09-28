@@ -46,28 +46,75 @@
                             <constraint firstAttribute="bottom" secondItem="iqP-Pv-CUS" secondAttribute="bottom" constant="5" id="ul9-VT-fTE"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Klf-v5-DzJ"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Klf-v5-DzJ"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYU-hV-Gga">
+                        <color key="backgroundColor" white="0.0" alpha="0.25454837328767121" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="20"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83w-vH-aWq">
+                        <color key="backgroundColor" white="0.0" alpha="0.24708369006849315" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="unc-ds-HhU">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxd-4Z-fzs">
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.69338613013698636" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="sxd-4Z-fzs" secondAttribute="bottom" id="1fD-rR-h6v"/>
+                            <constraint firstAttribute="trailing" secondItem="sxd-4Z-fzs" secondAttribute="trailing" constant="5" id="2Ci-51-r4S"/>
+                            <constraint firstItem="sxd-4Z-fzs" firstAttribute="top" secondItem="unc-ds-HhU" secondAttribute="top" id="41X-qN-Aga"/>
+                            <constraint firstItem="sxd-4Z-fzs" firstAttribute="leading" secondItem="unc-ds-HhU" secondAttribute="leading" constant="5" id="C46-kc-hoB"/>
+                            <constraint firstAttribute="height" constant="60" id="H73-Qv-1P6"/>
+                            <constraint firstAttribute="width" constant="60" id="LxX-xZ-isg"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="bxS-5J-DZ9" firstAttribute="top" secondItem="7dx-Qi-8HE" secondAttribute="top" id="1FS-0l-Nwr"/>
                     <constraint firstItem="bxS-5J-DZ9" firstAttribute="leading" secondItem="7dx-Qi-8HE" secondAttribute="leading" id="2OU-un-x6K"/>
                     <constraint firstAttribute="trailing" secondItem="bxS-5J-DZ9" secondAttribute="trailing" id="2gr-gO-Xnz"/>
+                    <constraint firstItem="83w-vH-aWq" firstAttribute="leading" secondItem="7dx-Qi-8HE" secondAttribute="leading" constant="10" id="Aub-CA-cWW"/>
                     <constraint firstAttribute="bottom" secondItem="Klf-v5-DzJ" secondAttribute="bottom" id="G1Y-2r-EkI"/>
                     <constraint firstItem="Klf-v5-DzJ" firstAttribute="top" secondItem="bxS-5J-DZ9" secondAttribute="bottom" id="HBj-qt-97j"/>
                     <constraint firstItem="bxS-5J-DZ9" firstAttribute="top" secondItem="7dx-Qi-8HE" secondAttribute="top" id="QIq-1t-gl4"/>
                     <constraint firstItem="Klf-v5-DzJ" firstAttribute="leading" secondItem="7dx-Qi-8HE" secondAttribute="leading" id="QVN-sW-z4j"/>
                     <constraint firstAttribute="trailing" secondItem="bxS-5J-DZ9" secondAttribute="trailing" id="R8d-4R-Kyx"/>
                     <constraint firstAttribute="trailing" secondItem="Klf-v5-DzJ" secondAttribute="trailing" id="T3i-K2-A2B"/>
+                    <constraint firstItem="vYU-hV-Gga" firstAttribute="leading" secondItem="7dx-Qi-8HE" secondAttribute="leading" constant="10" id="dES-C9-lLk"/>
                     <constraint firstItem="bxS-5J-DZ9" firstAttribute="leading" secondItem="7dx-Qi-8HE" secondAttribute="leading" id="eUJ-iG-XQM"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vYU-hV-Gga" secondAttribute="trailing" constant="20" id="fNb-lo-FUh"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="83w-vH-aWq" secondAttribute="trailing" constant="20" id="jeE-go-ftU"/>
+                    <constraint firstItem="83w-vH-aWq" firstAttribute="top" secondItem="vYU-hV-Gga" secondAttribute="bottom" constant="10" id="kad-H2-geW"/>
+                    <constraint firstItem="vYU-hV-Gga" firstAttribute="top" secondItem="bxS-5J-DZ9" secondAttribute="bottom" constant="10" id="mR2-vq-bOU"/>
+                    <constraint firstAttribute="bottom" secondItem="unc-ds-HhU" secondAttribute="bottom" constant="10" id="pu1-n8-15A"/>
+                    <constraint firstAttribute="trailing" secondItem="unc-ds-HhU" secondAttribute="trailing" constant="10" id="qfE-88-Six"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="countLabel" destination="sxd-4Z-fzs" id="dDF-0X-epE"/>
                 <outlet property="imageViewForUser" destination="iqP-Pv-CUS" id="qfo-jl-3Me"/>
                 <outlet property="mainImageView" destination="Klf-v5-DzJ" id="yHQ-i9-dal"/>
+                <outlet property="subTitleinImageViewLabel" destination="83w-vH-aWq" id="iBk-QD-UR7"/>
+                <outlet property="titleInImageViewLabel" destination="vYU-hV-Gga" id="rhV-o8-lhW"/>
                 <outlet property="titleLabel" destination="4BE-ya-Ik2" id="39n-8W-y3f"/>
+                <outlet property="view" destination="unc-ds-HhU" id="S5g-sj-CYM"/>
             </connections>
-            <point key="canvasLocation" x="38.5" y="156"/>
+            <point key="canvasLocation" x="37" y="134"/>
         </tableViewCell>
     </objects>
 </document>

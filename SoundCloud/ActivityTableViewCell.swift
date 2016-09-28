@@ -10,6 +10,10 @@ import UIKit
 
 class ActivityTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var view: UIView!
+    @IBOutlet weak var titleInImageViewLabel: UILabel!
+    @IBOutlet weak var subTitleinImageViewLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageViewForUser: UIImageView!
     @IBOutlet weak var mainImageView: UIImageView!

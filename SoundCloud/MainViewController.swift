@@ -18,10 +18,11 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         self.setupTableView(tableView)
         navigationController?.navigationBar.barTintColor = UIColor(red:255/255, green: 116/255, blue: 0/255, alpha:1)
-        self.title = "USER INFO"
+        self.title = "FEED"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.viewModel.requestMe(self.viewModel.token, tableView: tableView)
-        self.viewModel.getData(self.viewModel.token, tableView: tableView)
+        self.viewModel.requestMe(tableView)
+        self.viewModel.getData(tableView)
+       // self.viewModel.getMainImage(tableView)
     }
 }
 
@@ -37,6 +38,16 @@ extension MainViewController: UITableViewDataSource {
         let url = NSURL.init(string: self.viewModel.arrayActivity[indexPath.row].urlUser)
         cell.imageViewForUser.sd_setImageWithURL(url)
         cell.mainImageView.sd_setImageWithURL(url)
+        cell.subTitleinImageViewLabel.text = self.viewModel.arrayActivity[indexPath.row].title
+        cell.titleInImageViewLabel.text = self.viewModel.arrayActivity[indexPath.row].userName
+        
+        if self.viewModel.arrayActivity[indexPath.row].trackCount != 0{
+            cell.view.hidden = false
+            cell.countLabel.text = "\(self.viewModel.arrayActivity[indexPath.row].trackCount)"
+        }else{
+            cell.view.hidden = true
+            cell.countLabel.text = ""
+        }
         return cell
     }
 }
