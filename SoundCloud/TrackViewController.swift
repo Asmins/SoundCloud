@@ -46,6 +46,11 @@ extension TrackViewController: UITableViewDataSource {
         controller.url = url
         controller.titleText = self.viewModel.arrayTracks[indexPath.row].title
         controller.subTitleText = self.viewModel.arrayTracks[indexPath.row].subTitle
+        for i in 0..<self.viewModel.arrayTracks.count{
+            controller.viewModel.arrayTrack.append(self.viewModel.arrayTracks[i].idTrack)
+        }
+        controller.viewModel.getTrackInfo(indexPath.row)
+        controller.viewModel.count = indexPath.row
         self.navigationController?.pushViewController(controller, animated: true)
         tableView.reloadData()
     }

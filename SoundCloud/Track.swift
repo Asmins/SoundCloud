@@ -11,6 +11,7 @@ import Foundation
 
 class Track {
     var idPlayList:Int!
+    var idTrack:Int!
     var time:String!
     var count:Int!
     var title:String!

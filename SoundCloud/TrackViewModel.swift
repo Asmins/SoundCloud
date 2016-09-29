@@ -26,7 +26,6 @@ class TrackViewModel {
     
     func parseJsonTrack(data:NSData) {
         let json = JSON(data:data)
-        
         for i in 0..<json.count{
             let track = Track()
             track.title = json[i]["user"]["username"].stringValue
@@ -35,6 +34,7 @@ class TrackViewModel {
             let formattedTime = time!.msToSeconds.minuteSecondMS
             track.time = formattedTime
             track.urlImage = json[i]["user"]["avatar_url"].stringValue
+            track.idTrack = json[i]["id"].int
             arrayTracks.append(track)
         }
     }
