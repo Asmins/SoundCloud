@@ -31,7 +31,6 @@ extension TrackViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TrackCell") as! TrackTableViewCell
         if self.viewModel.arrayTracks.count != 0 {
-            print(viewModel.arrayTracks[indexPath.row].time)
         cell.timeLabel.text = viewModel.arrayTracks[indexPath.row].time
         cell.topTItleLabel.text = viewModel.arrayTracks[indexPath.row].title
         cell.titleLabel.text = viewModel.arrayTracks[indexPath.row].subTitle
@@ -39,6 +38,16 @@ extension TrackViewController: UITableViewDataSource {
         cell.imageViewForPhotoAlbum.sd_setImageWithURL(url)
         }
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("PlayerView") as! PlayerViewController
+        let url = NSURL(string: self.viewModel.arrayTracks[indexPath.row].urlImage)
+        controller.url = url
+        controller.titleText = self.viewModel.arrayTracks[indexPath.row].title
+        controller.subTitleText = self.viewModel.arrayTracks[indexPath.row].subTitle
+        self.navigationController?.pushViewController(controller, animated: true)
+        tableView.reloadData()
     }
 }
 

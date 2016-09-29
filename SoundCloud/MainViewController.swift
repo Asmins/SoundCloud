@@ -58,8 +58,15 @@ extension MainViewController: UITableViewDataSource {
             controller.viewModel.track.count = self.viewModel.arrayPlaylists[indexPath.row].trackCount
             controller.viewModel.track.idPlayList = self.viewModel.arrayPlaylists[indexPath.row].id
             self.navigationController?.pushViewController(controller, animated: true)
+            tableView.reloadData()
         }else{
-            print("Nothing to do")
+            let controller = self.storyboard?.instantiateViewControllerWithIdentifier("PlayerView") as! PlayerViewController
+            controller.titleText = self.viewModel.arrayActivity[indexPath.row].title
+            controller.subTitleText = self.viewModel.arrayActivity[indexPath.row].userName
+            let url = NSURL(string: self.viewModel.arrayActivity[indexPath.row].urlUser)
+            controller.url = url
+            self.navigationController?.pushViewController(controller, animated: true)
+            tableView.reloadData()
         }
     }
 }
