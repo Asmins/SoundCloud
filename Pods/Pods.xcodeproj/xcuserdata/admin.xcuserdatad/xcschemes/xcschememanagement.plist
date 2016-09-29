@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UAProgressView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>libwebp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,12 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>58FED399614E2465C5FC3A6DA61B4306</key>
+		<key>225FAF5E8B5AE3D1D56CCAB677DBB186</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5BEA334347AD2885D7E094239582577C</key>
+		<key>5539A3C81452C7371930FD49CACBF770</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BDB7E8719C577AAC17E29E761B891BC2</key>
+		<key>8DCAB791EE031B7558FEE095DD3BE2B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DFE02EA86455AFB081ABF7222BC2A0F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

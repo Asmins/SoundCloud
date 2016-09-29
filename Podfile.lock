@@ -29,11 +29,13 @@ PODS:
     - libwebp
     - SDWebImage/Core
   - SwiftyJSON (3.1.0)
+  - UAProgressView (0.1.3)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, tag `3.5.0`)
   - SDWebImage/WebP
   - SwiftyJSON
+  - UAProgressView
 
 EXTERNAL SOURCES:
   Alamofire:
@@ -50,5 +52,6 @@ SPEC CHECKSUMS:
   libwebp: 68ba2001ba6806ee52837ebd77a551a0b6567e4e
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwiftyJSON: 29b9f2a64f118c07e691667c2ba1efe536acfe0b
+  UAProgressView: ce49aee47c14df6dc372f6fd57852f570ca97e6b
 
 COCOAPODS: 0.39.0

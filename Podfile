@@ -5,6 +5,7 @@
 
 target 'SoundCloud' do
 	pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :tag => '3.5.0'
+	pod 'UAProgressView'
 	pod 'SwiftyJSON'
 	pod 'SDWebImage/WebP'
 end
