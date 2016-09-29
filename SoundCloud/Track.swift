@@ -1,5 +1,5 @@
 //
-//  Playlist.swift
+//  Track.swift
 //  SoundCloud
 //
 //  Created by admin on 28.09.16.
@@ -8,9 +8,12 @@
 
 import Foundation
 
-class Playlist {
-    var id:Int!
-    var url:String!
+
+class Track {
+    var idPlayList:Int!
+    var time:String!
+    var count:Int!
     var title:String!
-    var trackCount:Int!
+    var subTitle:String!
+    var urlImage:String!
 }

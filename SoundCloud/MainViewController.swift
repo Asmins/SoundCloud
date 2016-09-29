@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.viewModel.requestMe(tableView)
         self.viewModel.getData(tableView)
-       // self.viewModel.getMainImage(tableView)
+        self.viewModel.getMainImage(tableView)
     }
 }
 
@@ -49,6 +49,18 @@ extension MainViewController: UITableViewDataSource {
             cell.countLabel.text = ""
         }
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if self.viewModel.arrayActivity[indexPath.row].type == "playlist" {
+            let controller = self.storyboard?.instantiateViewControllerWithIdentifier("TrackViewController") as! TrackViewController
+            controller.title = self.viewModel.arrayActivity[indexPath.row].title
+            controller.viewModel.track.count = self.viewModel.arrayPlaylists[indexPath.row].trackCount
+            controller.viewModel.track.idPlayList = self.viewModel.arrayPlaylists[indexPath.row].id
+            self.navigationController?.pushViewController(controller, animated: true)
+        }else{
+            print("Nothing to do")
+        }
     }
 }
 
@@ -82,6 +94,7 @@ extension MainViewController: UITableViewDelegate {
 private extension MainViewController {
     
     func setupTableView(tableView:UITableView){
+       // tableView.allowsSelection = false
         tableView.registerNib(UINib(nibName: "HeaderTableViewCell",bundle: nil), forHeaderFooterViewReuseIdentifier: "Header")
         tableView.registerNib(UINib(nibName: "ActivityTableViewCell",bundle:nil), forCellReuseIdentifier: "ActivityCell")
     }

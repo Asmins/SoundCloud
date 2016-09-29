@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2327e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackCell" id="Xwf-nL-88j" customClass="TrackTableViewCell" customModule="SoundCloud" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xwf-nL-88j" id="rGD-wD-qPh">
+                <frame key="frameInset" width="375" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsK-qW-CnO">
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sf9-If-KiF">
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jf8-zz-cNc">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="61" id="tyq-vA-n2N"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrh-Y8-gTT">
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Jf8-zz-cNc" secondAttribute="bottom" constant="9" id="5fp-lV-Wor"/>
+                    <constraint firstAttribute="bottom" secondItem="nrh-Y8-gTT" secondAttribute="bottom" constant="10" id="GBz-hP-fIE"/>
+                    <constraint firstItem="Jf8-zz-cNc" firstAttribute="leading" secondItem="rGD-wD-qPh" secondAttribute="leading" constant="15" id="Gp5-rL-0Ea"/>
+                    <constraint firstAttribute="trailing" secondItem="nrh-Y8-gTT" secondAttribute="trailing" constant="20" id="SIr-Kg-n7C"/>
+                    <constraint firstItem="Sf9-If-KiF" firstAttribute="top" secondItem="rGD-wD-qPh" secondAttribute="top" constant="10" id="Tjg-W2-PXH"/>
+                    <constraint firstItem="Sf9-If-KiF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MsK-qW-CnO" secondAttribute="trailing" constant="20" id="dZN-5d-EHu"/>
+                    <constraint firstItem="Jf8-zz-cNc" firstAttribute="top" secondItem="rGD-wD-qPh" secondAttribute="top" constant="9" id="fwx-j0-Xa4"/>
+                    <constraint firstItem="nrh-Y8-gTT" firstAttribute="leading" secondItem="Jf8-zz-cNc" secondAttribute="trailing" constant="10" id="lF1-ls-jln"/>
+                    <constraint firstItem="MsK-qW-CnO" firstAttribute="leading" secondItem="Jf8-zz-cNc" secondAttribute="trailing" constant="10" id="rI7-gQ-lL4"/>
+                    <constraint firstItem="MsK-qW-CnO" firstAttribute="top" secondItem="rGD-wD-qPh" secondAttribute="top" constant="10" id="svt-05-WSO"/>
+                    <constraint firstAttribute="trailing" secondItem="Sf9-If-KiF" secondAttribute="trailing" constant="10" id="xAy-xU-gKs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imageViewForPhotoAlbum" destination="Jf8-zz-cNc" id="6bd-vX-AvM"/>
+                <outlet property="timeLabel" destination="Sf9-If-KiF" id="cwH-MK-i9a"/>
+                <outlet property="titleLabel" destination="nrh-Y8-gTT" id="yko-2T-kgd"/>
+                <outlet property="topTItleLabel" destination="MsK-qW-CnO" id="Ci1-BB-BdC"/>
+            </connections>
+            <point key="canvasLocation" x="22.5" y="-5"/>
+        </tableViewCell>
+    </objects>
+</document>

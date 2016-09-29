@@ -47,8 +47,8 @@ class MainViewModel {
             tableView.reloadData()
         }
     }
-
-/*
+    
+    
     func getMainImage(tableView:UITableView) {
         let url = NSURL(string:"https://api.soundcloud.com/me/playlists?oauth_token=\(token)")!
         Alamofire.request(.GET,url).responseJSON{ response in
@@ -63,14 +63,14 @@ class MainViewModel {
         for i in 0..<json.count{
             let tracks = json[i]["tracks"]
             let playlist = Playlist()
+            playlist.id = json[i]["id"].int
             playlist.url = tracks[tracks.count - 1]["artwork_url"].stringValue
             playlist.title = json[i]["title"].stringValue
             playlist.trackCount = json[i]["track_count"].int
             arrayPlaylists.append(playlist)
-            print(arrayPlaylists)
         }
     }
- */
+    
     
     func parseDataForActivity(data:NSData) -> [Activity]{
         let json = JSON(data:data)
@@ -86,7 +86,6 @@ class MainViewModel {
             }else{
                 activity.trackCount = 0
             }
-            print(activity.trackCount)
             activity.title = origin["title"].stringValue
             activity.userName = user["username"].stringValue
             activity.urlUser = user["avatar_url"].stringValue

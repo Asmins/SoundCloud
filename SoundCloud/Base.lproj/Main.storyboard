@@ -104,6 +104,60 @@
             </objects>
             <point key="canvasLocation" x="33" y="1475"/>
         </scene>
+        <!--Track View Controller-->
+        <scene sceneID="Va9-YA-5W8">
+            <objects>
+                <viewController storyboardIdentifier="TrackViewController" id="dqk-I6-FXq" customClass="TrackViewController" customModule="SoundCloud" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GhI-Fr-5O2"/>
+                        <viewControllerLayoutGuide type="bottom" id="US1-FX-zrF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7cV-gy-tAj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pay-Jc-RgW">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dqk-I6-FXq" id="bqq-A5-FFJ"/>
+                                    <outlet property="delegate" destination="dqk-I6-FXq" id="San-RU-9Xg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pay-Jc-RgW" firstAttribute="top" secondItem="GhI-Fr-5O2" secondAttribute="bottom" constant="-64" id="7a9-94-JlC"/>
+                            <constraint firstItem="Pay-Jc-RgW" firstAttribute="leading" secondItem="7cV-gy-tAj" secondAttribute="leading" id="GF9-4u-wjf"/>
+                            <constraint firstAttribute="trailing" secondItem="Pay-Jc-RgW" secondAttribute="trailing" id="t6Y-42-n3f"/>
+                            <constraint firstItem="US1-FX-zrF" firstAttribute="top" secondItem="Pay-Jc-RgW" secondAttribute="bottom" id="wng-6P-VLC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Pay-Jc-RgW" id="1L4-3f-365"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sf3-BO-cpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="1473"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KoA-IS-5Ry">
+            <objects>
+                <viewController id="HYt-MK-Q2G" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nl4-Cf-yZL"/>
+                        <viewControllerLayoutGuide type="bottom" id="YMc-AS-T3l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dgO-uQ-mbH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xX-mk-6py" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1478" y="1472"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="EL3-nm-sAQ">
             <objects>

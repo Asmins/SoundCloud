@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		81A29AFF1828AC2ADD1D02BF /* Pods_SoundCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C605E0B5DE10E78D662B06D /* Pods_SoundCloud.framework */; };
 		84180D241D9BBD67004C0CA0 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84180D231D9BBD67004C0CA0 /* Playlist.swift */; };
+		843DB9CE1D9BE975000179B2 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843DB9CD1D9BE975000179B2 /* TrackTableViewCell.xib */; };
+		843DB9D01D9BE999000179B2 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DB9CF1D9BE999000179B2 /* TrackTableViewCell.swift */; };
+		843DB9D21D9BECFD000179B2 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DB9D11D9BECFD000179B2 /* TrackViewController.swift */; };
+		843DB9D41D9BED0A000179B2 /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DB9D31D9BED0A000179B2 /* TrackViewModel.swift */; };
+		843DB9D61D9BFB9B000179B2 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DB9D51D9BFB9B000179B2 /* Track.swift */; };
 		844386EF1D9532980046D34D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844386EE1D9532980046D34D /* AppDelegate.swift */; };
 		844386F11D9532980046D34D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844386F01D9532980046D34D /* ViewController.swift */; };
 		844386F41D9532980046D34D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844386F21D9532980046D34D /* Main.storyboard */; };
@@ -37,6 +42,11 @@
 		38ABA053A4AD158026268CAB /* Pods-SoundCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCloud.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCloud/Pods-SoundCloud.release.xcconfig"; sourceTree = "<group>"; };
 		6C605E0B5DE10E78D662B06D /* Pods_SoundCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84180D231D9BBD67004C0CA0 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		843DB9CD1D9BE975000179B2 /* TrackTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
+		843DB9CF1D9BE999000179B2 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		843DB9D11D9BECFD000179B2 /* TrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackViewController.swift; sourceTree = "<group>"; };
+		843DB9D31D9BED0A000179B2 /* TrackViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
+		843DB9D51D9BFB9B000179B2 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		844386EB1D9532980046D34D /* SoundCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844386EE1D9532980046D34D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844386F01D9532980046D34D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +160,8 @@
 				849B896C1D99646C008D3A51 /* HeaderTableViewCell.swift */,
 				8482D3701D9A7573005C57AB /* ActivityTableViewCell.xib */,
 				8482D3721D9A7E37005C57AB /* ActivityTableViewCell.swift */,
+				843DB9CD1D9BE975000179B2 /* TrackTableViewCell.xib */,
+				843DB9CF1D9BE999000179B2 /* TrackTableViewCell.swift */,
 			);
 			name = TalbeViewCell;
 			sourceTree = "<group>";
@@ -163,6 +175,8 @@
 				8482D36E1D9A5981005C57AB /* MainViewModel.swift */,
 				84F5F8AD1D9A95E100E52B86 /* Activity.swift */,
 				84180D231D9BBD67004C0CA0 /* Playlist.swift */,
+				843DB9D31D9BED0A000179B2 /* TrackViewModel.swift */,
+				843DB9D51D9BFB9B000179B2 /* Track.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -173,6 +187,7 @@
 				849B89591D99016B008D3A51 /* SoundCloudLoginViewController.swift */,
 				849B89621D994ABC008D3A51 /* FirstViewController.swift */,
 				849B89661D995A4E008D3A51 /* MainViewController.swift */,
+				843DB9D11D9BECFD000179B2 /* TrackViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -249,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				844386F91D9532980046D34D /* LaunchScreen.storyboard in Resources */,
+				843DB9CE1D9BE975000179B2 /* TrackTableViewCell.xib in Resources */,
 				844386F61D9532980046D34D /* Assets.xcassets in Resources */,
 				849B89611D994902008D3A51 /* Logo.png in Resources */,
 				849B896B1D9962EA008D3A51 /* HeaderTableViewCell.xib in Resources */,
@@ -312,19 +328,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843DB9D41D9BED0A000179B2 /* TrackViewModel.swift in Sources */,
 				849B89671D995A4E008D3A51 /* MainViewController.swift in Sources */,
 				84180D241D9BBD67004C0CA0 /* Playlist.swift in Sources */,
 				849B89631D994ABC008D3A51 /* FirstViewController.swift in Sources */,
 				849B89651D994B43008D3A51 /* FirstViewModel.swift in Sources */,
+				843DB9D21D9BECFD000179B2 /* TrackViewController.swift in Sources */,
 				844386F11D9532980046D34D /* ViewController.swift in Sources */,
 				8482D3731D9A7E37005C57AB /* ActivityTableViewCell.swift in Sources */,
 				849B896D1D99646C008D3A51 /* HeaderTableViewCell.swift in Sources */,
 				84F5F8AE1D9A95E100E52B86 /* Activity.swift in Sources */,
 				8482D36F1D9A5981005C57AB /* MainViewModel.swift in Sources */,
 				8482D36D1D9A5856005C57AB /* User.swift in Sources */,
+				843DB9D61D9BFB9B000179B2 /* Track.swift in Sources */,
 				844386EF1D9532980046D34D /* AppDelegate.swift in Sources */,
 				849B895A1D99016B008D3A51 /* SoundCloudLoginViewController.swift in Sources */,
 				849B89581D98FF27008D3A51 /* SoundCloudAuthenticator.swift in Sources */,
+				843DB9D01D9BE999000179B2 /* TrackTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
