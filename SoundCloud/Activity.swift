@@ -14,4 +14,5 @@ class Activity {
     var urlUser:String!
     var title:String!
     var trackCount:Int!
+    var idTrack:Int!
 }

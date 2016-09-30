@@ -86,6 +86,9 @@ class MainViewModel {
             }else{
                 activity.trackCount = 0
             }
+            if activity.type == "track"{
+                activity.idTrack = origin["id"].int
+            }
             activity.title = origin["title"].stringValue
             activity.userName = user["username"].stringValue
             activity.urlUser = user["avatar_url"].stringValue

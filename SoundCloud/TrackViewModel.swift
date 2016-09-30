@@ -38,7 +38,6 @@ class TrackViewModel {
             track.idTrack = json[i]["id"].int
             arrayTracks.append(track)
         }
-        print(arrayTracks)
     }
 }
 

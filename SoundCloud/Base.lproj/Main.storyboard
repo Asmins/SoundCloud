@@ -157,9 +157,6 @@
                                     <constraint firstAttribute="height" constant="170" id="SBt-PI-boU"/>
                                 </constraints>
                             </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9KD-33-ZKU">
-                                <color key="progressTintColor" red="1" green="0.46733601699999999" blue="0.05952738531" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xf-vd-fvm">
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="21"/>
                                 <nil key="textColor"/>
@@ -211,18 +208,15 @@
                             <constraint firstAttribute="trailing" secondItem="oVh-BG-IBA" secondAttribute="trailing" constant="50" id="94v-Ie-o1a"/>
                             <constraint firstItem="6jz-ee-Le2" firstAttribute="leading" secondItem="07l-9k-g9n" secondAttribute="trailing" constant="45" id="Ayz-s0-qwr"/>
                             <constraint firstItem="7xf-vd-fvm" firstAttribute="leading" secondItem="dgO-uQ-mbH" secondAttribute="leading" constant="20" id="F5y-D0-SXi"/>
-                            <constraint firstAttribute="trailing" secondItem="9KD-33-ZKU" secondAttribute="trailing" constant="15" id="Ftw-iC-W7r"/>
                             <constraint firstItem="RLK-RR-4LZ" firstAttribute="top" secondItem="7xf-vd-fvm" secondAttribute="bottom" constant="10" id="GUP-4h-6Kt"/>
                             <constraint firstItem="6jz-ee-Le2" firstAttribute="top" secondItem="RLK-RR-4LZ" secondAttribute="bottom" constant="55" id="Lsk-If-dqg"/>
-                            <constraint firstItem="9KD-33-ZKU" firstAttribute="leading" secondItem="dgO-uQ-mbH" secondAttribute="leading" constant="15" id="MBp-vV-dTG"/>
                             <constraint firstItem="3Iv-va-auJ" firstAttribute="leading" secondItem="dgO-uQ-mbH" secondAttribute="leading" constant="67" id="T5O-K1-5M9"/>
                             <constraint firstItem="RLK-RR-4LZ" firstAttribute="leading" secondItem="dgO-uQ-mbH" secondAttribute="leading" constant="20" id="WSk-qf-VhS"/>
-                            <constraint firstItem="7xf-vd-fvm" firstAttribute="top" secondItem="9KD-33-ZKU" secondAttribute="bottom" constant="60" id="WdY-cE-Llz"/>
                             <constraint firstAttribute="trailing" secondItem="RLK-RR-4LZ" secondAttribute="trailing" constant="20" id="Y4M-hb-7Kq"/>
                             <constraint firstItem="oVh-BG-IBA" firstAttribute="top" secondItem="nl4-Cf-yZL" secondAttribute="bottom" constant="30" id="djM-0i-Ybb"/>
                             <constraint firstAttribute="trailing" secondItem="6jz-ee-Le2" secondAttribute="trailing" constant="68" id="fHh-6G-6mb"/>
                             <constraint firstItem="oVh-BG-IBA" firstAttribute="leading" secondItem="dgO-uQ-mbH" secondAttribute="leading" constant="50" id="fUL-6o-k9R"/>
-                            <constraint firstItem="9KD-33-ZKU" firstAttribute="top" secondItem="oVh-BG-IBA" secondAttribute="bottom" constant="20" id="pX3-Sm-6PG"/>
+                            <constraint firstItem="7xf-vd-fvm" firstAttribute="top" secondItem="oVh-BG-IBA" secondAttribute="bottom" constant="70" id="jaS-pg-3QR"/>
                             <constraint firstItem="07l-9k-g9n" firstAttribute="leading" secondItem="3Iv-va-auJ" secondAttribute="trailing" constant="45" id="qcf-ag-X53"/>
                             <constraint firstItem="07l-9k-g9n" firstAttribute="top" secondItem="RLK-RR-4LZ" secondAttribute="bottom" constant="40" id="vCd-ED-TDZ"/>
                         </constraints>
@@ -230,7 +224,6 @@
                     <connections>
                         <outlet property="mainImageView" destination="oVh-BG-IBA" id="VMI-Aq-yNg"/>
                         <outlet property="playPauseButton" destination="07l-9k-g9n" id="l69-fp-J1E"/>
-                        <outlet property="progressView" destination="9KD-33-ZKU" id="vdo-LI-pSu"/>
                         <outlet property="subTitle" destination="RLK-RR-4LZ" id="aDC-aT-wbQ"/>
                         <outlet property="titileLabel" destination="7xf-vd-fvm" id="4ON-wd-WOI"/>
                     </connections>

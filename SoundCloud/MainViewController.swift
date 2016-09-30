@@ -65,6 +65,12 @@ extension MainViewController: UITableViewDataSource {
             controller.viewModel.subTitleText = self.viewModel.arrayActivity[indexPath.row].userName
             let url = NSURL(string: self.viewModel.arrayActivity[indexPath.row].urlUser)
             controller.viewModel.url = url
+            for i in 0..<self.viewModel.arrayActivity.count{
+                if self.viewModel.arrayActivity[i].idTrack != nil{
+                    controller.viewModel.arrayTrack.append(self.viewModel.arrayActivity[i].idTrack)
+                }
+            }
+            print(controller.viewModel.arrayTrack)
             self.navigationController?.pushViewController(controller, animated: true)
             tableView.reloadData()
         }
