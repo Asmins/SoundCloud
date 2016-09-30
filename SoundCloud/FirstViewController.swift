@@ -17,11 +17,6 @@ class FirstViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let controller = segue.destinationViewController as? SoundCloudLoginViewController,
             segueID = segue.identifier where segueID == "LoginSegue" {
@@ -40,8 +35,12 @@ extension FirstViewController: SoundCloudLoginResultsDelegate {
         self.presentViewController(navControler, animated: true, completion: nil)
     }
     
+   
     func didFail(loginViewController: SoundCloudLoginViewController) {
-    
+        let alert = UIAlertController(title: "Error", message: "Please check your login or password and try again", preferredStyle: .Alert)
+        let doneAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alert.addAction(doneAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
 }

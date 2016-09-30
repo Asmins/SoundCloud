@@ -61,10 +61,10 @@ extension MainViewController: UITableViewDataSource {
             tableView.reloadData()
         }else{
             let controller = self.storyboard?.instantiateViewControllerWithIdentifier("PlayerView") as! PlayerViewController
-            controller.titleText = self.viewModel.arrayActivity[indexPath.row].title
-            controller.subTitleText = self.viewModel.arrayActivity[indexPath.row].userName
+            controller.viewModel.titleText = self.viewModel.arrayActivity[indexPath.row].title
+            controller.viewModel.subTitleText = self.viewModel.arrayActivity[indexPath.row].userName
             let url = NSURL(string: self.viewModel.arrayActivity[indexPath.row].urlUser)
-            controller.url = url
+            controller.viewModel.url = url
             self.navigationController?.pushViewController(controller, animated: true)
             tableView.reloadData()
         }
@@ -101,7 +101,6 @@ extension MainViewController: UITableViewDelegate {
 private extension MainViewController {
     
     func setupTableView(tableView:UITableView){
-       // tableView.allowsSelection = false
         tableView.registerNib(UINib(nibName: "HeaderTableViewCell",bundle: nil), forHeaderFooterViewReuseIdentifier: "Header")
         tableView.registerNib(UINib(nibName: "ActivityTableViewCell",bundle:nil), forCellReuseIdentifier: "ActivityCell")
     }

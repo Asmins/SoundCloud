@@ -16,47 +16,57 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var titileLabel: UILabel!
     @IBOutlet weak var subTitle: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
-    var player:AVPlayer?
-    var avItem: AVPlayerItem?
-    
+   
     var viewModel = PlayerViewModel()
-    var titleText:String!
-    var subTitleText:String!
-    var url:NSURL!
-    var myValue = 1
     
     var audioPlayer:AVAudioPlayer!
+    var url:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         progressView.transform = CGAffineTransformScale(progressView.transform, 1, 5)
         self.title = "PLAYER"
-        self.mainImageView.sd_setImageWithURL(url)
-        self.titileLabel.text = titleText
-        self.subTitle.text = subTitleText
+        self.mainImageView.sd_setImageWithURL(self.viewModel.url)
+        self.titileLabel.text = self.viewModel.titleText
+        self.subTitle.text = self.viewModel.subTitleText
     }
     
     @IBAction func playPauseButtonAction(sender: AnyObject) {
-        if myValue == 0{
+        if self.viewModel.myValue == 0{
             playPauseButton.setImage(UIImage(named: "Play"), forState: UIControlState.Normal)
-            myValue = 1
-            player?.pause()
+            self.viewModel.myValue = 1
+            self.viewModel.player?.pause()
         }else{
-            let url = "https://api.soundcloud.com/tracks/\(self.viewModel.arrayUrl[0])/stream?client_id=7467688f360c6055fb679c3bd739acbc"
-            avItem = AVPlayerItem(URL: NSURL(string:url)!)
-            player = AVPlayer(playerItem: avItem)
-            player?.play()
-            
+            playMusic(self.viewModel.count)
             playPauseButton.setImage(UIImage(named: "Pause"), forState: UIControlState.Normal)
-            myValue = 0
+            self.viewModel.myValue = 0
         }
     }
     
     @IBAction func nextTrackButtonAction(sender: AnyObject) {
+        print(self.viewModel.arrayTrack.count)
         
+        if self.viewModel.count != self.viewModel.arrayTrack.count{
+            self.viewModel.count = self.viewModel.count + 1
+            playMusic(self.viewModel.count)
+            }else{
+            print(self.viewModel.count)
+            print("\(self.viewModel.count) this count == self.viewModel.arrayTrack.count")
+        }
     }
     
     @IBAction func previousTrackButtonAction(sender: AnyObject) {
+        
+    }
+    
+    
+    func playMusic(count:Int) {
+        url = "https://api.soundcloud.com/tracks/\(self.viewModel.arrayTrack[count])/stream?client_id=7467688f360c6055fb679c3bd739acbc"
+        print(url)
+        self.viewModel.avItem = AVPlayerItem(URL: NSURL(string:url)!)
+        self.viewModel.player = AVPlayer(playerItem: self.viewModel.avItem)
+        self.viewModel.player?.play()
+        
     }
     
 }

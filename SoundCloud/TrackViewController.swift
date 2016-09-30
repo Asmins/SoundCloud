@@ -9,7 +9,7 @@
 import UIKit
 
 class TrackViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     var viewModel = TrackViewModel()
     
@@ -22,7 +22,7 @@ class TrackViewController: UIViewController {
 }
 
 extension TrackViewController: UITableViewDataSource {
-
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.arrayTracks.count
     }
@@ -30,26 +30,29 @@ extension TrackViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TrackCell") as! TrackTableViewCell
+        
         if self.viewModel.arrayTracks.count != 0 {
-        cell.timeLabel.text = viewModel.arrayTracks[indexPath.row].time
-        cell.topTItleLabel.text = viewModel.arrayTracks[indexPath.row].title
-        cell.titleLabel.text = viewModel.arrayTracks[indexPath.row].subTitle
-        let url = NSURL(string: self.viewModel.arrayTracks[indexPath.row].urlImage)
-        cell.imageViewForPhotoAlbum.sd_setImageWithURL(url)
+            cell.timeLabel.text = viewModel.arrayTracks[indexPath.row].time
+            cell.topTItleLabel.text = viewModel.arrayTracks[indexPath.row].title
+            cell.titleLabel.text = viewModel.arrayTracks[indexPath.row].subTitle
+            let url = NSURL(string: self.viewModel.arrayTracks[indexPath.row].urlImage)
+            cell.imageViewForPhotoAlbum.sd_setImageWithURL(url)
         }
+        
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("PlayerView") as! PlayerViewController
         let url = NSURL(string: self.viewModel.arrayTracks[indexPath.row].urlImage)
-        controller.url = url
-        controller.titleText = self.viewModel.arrayTracks[indexPath.row].title
-        controller.subTitleText = self.viewModel.arrayTracks[indexPath.row].subTitle
+        controller.viewModel.url = url
+        controller.viewModel.titleText = self.viewModel.arrayTracks[indexPath.row].title
+        controller.viewModel.subTitleText = self.viewModel.arrayTracks[indexPath.row].subTitle
+       
         for i in 0..<self.viewModel.arrayTracks.count{
             controller.viewModel.arrayTrack.append(self.viewModel.arrayTracks[i].idTrack)
         }
-        controller.viewModel.getTrackInfo(indexPath.row)
+       // controller.viewModel.getTrackInfo(indexPath.row)
         controller.viewModel.count = indexPath.row
         self.navigationController?.pushViewController(controller, animated: true)
         tableView.reloadData()
