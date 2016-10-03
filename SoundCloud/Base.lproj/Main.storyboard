@@ -200,7 +200,9 @@
                                     <action selector="previousTrackButtonAction:" destination="HYt-MK-Q2G" eventType="touchUpInside" id="GHz-2g-QUR"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="VZx-Vx-9ih">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="VZx-Vx-9ih">
+                                <color key="minimumTrackTintColor" red="1" green="0.46733601699999999" blue="0.05952738531" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="1" green="0.46733601699999999" blue="0.05952738531" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="sliderAction:" destination="HYt-MK-Q2G" eventType="valueChanged" id="ymx-sh-gvQ"/>
                                 </connections>

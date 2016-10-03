@@ -32,6 +32,7 @@ class PlayerViewModel {
     var arrayUrl = [Int]()
     var trackArray = [Track]()
     
+    ///FIXME
     func getTrackInfo(){
         for i in 0..<arrayTrack.count{
             Alamofire.request(.GET,"https://api.soundcloud.com/tracks/\(arrayTrack[i])?client_id=7467688f360c6055fb679c3bd739acbc").responseJSON{ response in
@@ -52,67 +53,64 @@ class PlayerViewModel {
         trackArray.append(track)
     }
     
-    func playMusic(button:UIButton) {
+    func playMusic(button:UIButton,slider:UISlider) {
+        player?.pause()
         let url = "https://api.soundcloud.com/tracks/\(arrayTrack[count])/stream?client_id=7467688f360c6055fb679c3bd739acbc"
+        print(url)
         avItem = AVPlayerItem(URL: NSURL(string:url)!)
         player = AVPlayer(playerItem: avItem)
+        slider.value = 0
         player?.play()
+        slider.setValue(Float((player?.currentTime().seconds)!), animated: true)
         button.setImage(UIImage(named: "Pause"), forState: UIControlState.Normal)
     }
     
-    func playPause(button:UIButton)  {
+    func playPause(button:UIButton,slider:UISlider)  {
+        
         if myValue == 0{
             button.setImage(UIImage(named: "Play"), forState: UIControlState.Normal)
             myValue = 1
             time = (player?.currentTime().seconds)!
-            print(time)
             player?.pause()
         }else{
             button.setImage(UIImage(named: "Pause"), forState: UIControlState.Normal)
             myValue = 0
-             let timeScale = self.player?.currentItem?.asset.duration.timescale
+            let timeScale = self.player?.currentItem?.asset.duration.timescale
             if time != 0 {
                 let p = CMTimeMakeWithSeconds(time, timeScale!)
                 player?.seekToTime(p, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
                 player?.play()
+                
             }else{
-                playMusic(button)
+                playMusic(button,slider: slider)
             }
         }
     }
     
-    func nextTrack(button:UIButton,imageView:UIImageView,titleLabel:UILabel,subTitleLabel:UILabel) {
+    func nextTrack(button:UIButton,imageView:UIImageView,titleLabel:UILabel,subTitleLabel:UILabel,slider:UISlider) {
         if count != arrayTrack.count - 1{
             count = count + 1
             let url = NSURL(string: trackArray[count].urlImage)
             imageView.sd_setImageWithURL(url)
             titleLabel.text = trackArray[count].title
             subTitleLabel.text = trackArray[count].subTitle
-            playMusic(button)
+            playMusic(button,slider: slider)
         }
     
         if count == arrayTrack.count - 1{
             count = -1
         }
     }
- /*
-    func playerObserver(trackSlider:UISlider) {
-        timeObserver = player?.addPeriodicTimeObserverForInterval(CMTimeMakeWithSeconds(1.0 / 60.0, Int32(NSEC_PER_SEC)), queue: nil, usingBlock: {
-            time in
-            self.positionChanged(trackSlider)
-        })
-        
-    }*/
     
-    func previousTrack(button:UIButton,imageView:UIImageView,titleLabel:UILabel,subTitleLabel:UILabel) {
+    func previousTrack(button:UIButton,imageView:UIImageView,titleLabel:UILabel,subTitleLabel:UILabel,slider:UISlider) {
         if count == 0 {
             count = arrayTrack.count - 1
             setupLabel(button, imageView: imageView, titleLabel: titleLabel, subTitleLabel: subTitleLabel)
-            playMusic(button)
+            playMusic(button,slider: slider)
         }else{
             count -= 1
             setupLabel(button, imageView: imageView, titleLabel: titleLabel, subTitleLabel: subTitleLabel)
-            playMusic(button)
+            playMusic(button,slider: slider)
         }
     }
     
@@ -132,21 +130,12 @@ class PlayerViewModel {
         titleLabel.text = trackArray[count].title
         subTitleLabel.text = trackArray[count].subTitle
     }
-    
-    
-    func positionChanged(trackSlider:UISlider) {
-        let duration = (player!.currentItem!.duration.seconds) / 1000.0
-        currentSeconds = (player?.currentTime().seconds)! / Double((player?.currentTime().timescale)!)
-        let value =  currentSeconds / duration
-        trackSlider.value = Float(value)
-    }
-    
-    
+
     func changeTime(trackSlider:UISlider){
-        let seconds = Double(trackSlider.value) * Double((player?.currentItem?.duration.seconds)! / 1000.0)
         let timeScale = self.player!.currentItem!.asset.duration.timescale;
-        let time = CMTimeMakeWithSeconds(seconds, timeScale);
-        player?.seekToTime(time, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
+        player?.pause()
+        player?.seekToTime(CMTimeMakeWithSeconds(NSTimeInterval(trackSlider.value), timeScale) , toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
         player?.play()
     }
+ 
 }
