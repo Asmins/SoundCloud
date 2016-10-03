@@ -44,6 +44,7 @@ extension MainViewController: UITableViewDataSource {
         if self.viewModel.arrayActivity[indexPath.row].trackCount != 0{
             cell.view.hidden = false
             cell.countLabel.text = "\(self.viewModel.arrayActivity[indexPath.row].trackCount)"
+            cell.idPlayList = self.viewModel.arrayActivity[indexPath.row].idPlaylist
         }else{
             cell.view.hidden = true
             cell.countLabel.text = ""
@@ -52,11 +53,12 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell =  tableView.cellForRowAtIndexPath(indexPath) as! ActivityTableViewCell
+        
         if self.viewModel.arrayActivity[indexPath.row].type == "playlist" {
             let controller = self.storyboard?.instantiateViewControllerWithIdentifier("TrackViewController") as! TrackViewController
             controller.title = self.viewModel.arrayActivity[indexPath.row].title
-            controller.viewModel.track.count = self.viewModel.arrayPlaylists[indexPath.row].trackCount
-            controller.viewModel.track.idPlayList = self.viewModel.arrayPlaylists[indexPath.row].id
+            controller.viewModel.track.idPlayList = cell.idPlayList
             self.navigationController?.pushViewController(controller, animated: true)
             tableView.reloadData()
         }else{
@@ -70,7 +72,6 @@ extension MainViewController: UITableViewDataSource {
                     controller.viewModel.arrayTrack.append(self.viewModel.arrayActivity[i].idTrack)
                 }
             }
-            print(controller.viewModel.arrayTrack)
             self.navigationController?.pushViewController(controller, animated: true)
             tableView.reloadData()
         }

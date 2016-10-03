@@ -19,7 +19,7 @@ class PlayerViewModel {
     
     var player:AVPlayer?
     var avItem: AVPlayerItem?
-    
+    var time = 0.0
     var titleText:String!
     var subTitleText:String!
     var url:NSURL!
@@ -71,11 +71,20 @@ class PlayerViewModel {
         if myValue == 0{
             button.setImage(UIImage(named: "Play"), forState: UIControlState.Normal)
             myValue = 1
+            time = (player?.currentTime().seconds)!
+            print(time)
             player?.pause()
         }else{
             button.setImage(UIImage(named: "Pause"), forState: UIControlState.Normal)
             myValue = 0
-            playMusic(button)
+             let timeScale = self.player?.currentItem?.asset.duration.timescale
+            if time != 0 {
+                let p = CMTimeMakeWithSeconds(time, timeScale!)
+                player?.seekToTime(p, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
+                player?.play()
+            }else{
+                playMusic(button)
+            }
         }
     }
     

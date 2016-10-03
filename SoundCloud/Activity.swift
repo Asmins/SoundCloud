@@ -15,4 +15,5 @@ class Activity {
     var title:String!
     var trackCount:Int!
     var idTrack:Int!
+    var idPlaylist:Int!
 }

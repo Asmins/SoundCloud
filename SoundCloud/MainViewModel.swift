@@ -51,6 +51,7 @@ class MainViewModel {
     
     func getMainImage(tableView:UITableView) {
         let url = NSURL(string:"https://api.soundcloud.com/me/playlists?oauth_token=\(token)")!
+        print(url)
         Alamofire.request(.GET,url).responseJSON{ response in
             if response.data != nil{
                 self.parseDataForGetMainImage(response.data!)
@@ -83,6 +84,8 @@ class MainViewModel {
             let user = origin["user"]
             if activity.type == "playlist" {
                 activity.trackCount = origin["track_count"].int
+                activity.idPlaylist = origin["id"].int
+           //     print(activity.idPlaylist)
             }else{
                 activity.trackCount = 0
             }

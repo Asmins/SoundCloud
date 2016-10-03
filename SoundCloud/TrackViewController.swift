@@ -15,6 +15,8 @@ class TrackViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let controllerCount = self.storyboard?.instantiateViewControllerWithIdentifier("PlayerView") as! PlayerViewController
+        controllerCount.viewModel.count = 0
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.setupTableView(tableView)
         self.viewModel.getTrack(tableView)

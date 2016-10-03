@@ -17,6 +17,9 @@ class ActivityTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageViewForUser: UIImageView!
     @IBOutlet weak var mainImageView: UIImageView!
+    
+    var idPlayList = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

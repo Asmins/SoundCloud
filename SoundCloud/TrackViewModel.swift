@@ -26,7 +26,6 @@ class TrackViewModel {
     
     func parseJsonTrack(data:NSData) {
         let json = JSON(data:data)
-     //   print(json)
         for i in 0..<json.count{
             let track = Track()
             track.title = json[i]["user"]["username"].stringValue

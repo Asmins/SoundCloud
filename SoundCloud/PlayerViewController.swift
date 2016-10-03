@@ -20,6 +20,7 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.viewModel.setupMainView(self,imageView: mainImageView, titleLabel: titileLabel, subTitleLabel: subTitle)
     }
     
