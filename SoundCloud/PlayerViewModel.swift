@@ -14,10 +14,12 @@ import AVKit
 
 class PlayerViewModel {
     
+    var timeObserver: AnyObject?
     var currentSeconds = 0.0
     var currentMinutest = 0
     
     var player:AVPlayer?
+    
     var avItem: AVPlayerItem?
     var time = 0.0
     var titleText:String!
@@ -49,15 +51,6 @@ class PlayerViewModel {
         track.subTitle = json["title"].stringValue
         trackArray.append(track)
     }
-    
-  /*  func positionChanged() {
-        let duration = (avItem?.duration.seconds)! / 1000.0
-        currentSeconds = (player?.currentTime().seconds)! / player?.currentTime().timescale
-        // currentSeconds = Float((player?.currentTime().value)! / Int64((player?.currentTime().timescale)!))
-        let value =  currentSeconds / duration
-        trackSlider.value = value
-    }
-    */
     
     func playMusic(button:UIButton) {
         let url = "https://api.soundcloud.com/tracks/\(arrayTrack[count])/stream?client_id=7467688f360c6055fb679c3bd739acbc"
@@ -102,6 +95,14 @@ class PlayerViewModel {
             count = -1
         }
     }
+ /*
+    func playerObserver(trackSlider:UISlider) {
+        timeObserver = player?.addPeriodicTimeObserverForInterval(CMTimeMakeWithSeconds(1.0 / 60.0, Int32(NSEC_PER_SEC)), queue: nil, usingBlock: {
+            time in
+            self.positionChanged(trackSlider)
+        })
+        
+    }*/
     
     func previousTrack(button:UIButton,imageView:UIImageView,titleLabel:UILabel,subTitleLabel:UILabel) {
         if count == 0 {
@@ -130,5 +131,22 @@ class PlayerViewModel {
         imageView.sd_setImageWithURL(url)
         titleLabel.text = trackArray[count].title
         subTitleLabel.text = trackArray[count].subTitle
+    }
+    
+    
+    func positionChanged(trackSlider:UISlider) {
+        let duration = (player!.currentItem!.duration.seconds) / 1000.0
+        currentSeconds = (player?.currentTime().seconds)! / Double((player?.currentTime().timescale)!)
+        let value =  currentSeconds / duration
+        trackSlider.value = Float(value)
+    }
+    
+    
+    func changeTime(trackSlider:UISlider){
+        let seconds = Double(trackSlider.value) * Double((player?.currentItem?.duration.seconds)! / 1000.0)
+        let timeScale = self.player!.currentItem!.asset.duration.timescale;
+        let time = CMTimeMakeWithSeconds(seconds, timeScale);
+        player?.seekToTime(time, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
+        player?.play()
     }
 }

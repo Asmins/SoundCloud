@@ -200,7 +200,11 @@
                                     <action selector="previousTrackButtonAction:" destination="HYt-MK-Q2G" eventType="touchUpInside" id="GHz-2g-QUR"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VZx-Vx-9ih"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="VZx-Vx-9ih">
+                                <connections>
+                                    <action selector="sliderAction:" destination="HYt-MK-Q2G" eventType="valueChanged" id="ymx-sh-gvQ"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -228,6 +232,7 @@
                     <connections>
                         <outlet property="mainImageView" destination="oVh-BG-IBA" id="VMI-Aq-yNg"/>
                         <outlet property="playPauseButton" destination="07l-9k-g9n" id="l69-fp-J1E"/>
+                        <outlet property="slider" destination="VZx-Vx-9ih" id="W3v-qM-fhk"/>
                         <outlet property="subTitle" destination="RLK-RR-4LZ" id="aDC-aT-wbQ"/>
                         <outlet property="titileLabel" destination="7xf-vd-fvm" id="4ON-wd-WOI"/>
                     </connections>

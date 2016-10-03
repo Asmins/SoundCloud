@@ -15,6 +15,7 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var titileLabel: UILabel!
     @IBOutlet weak var subTitle: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
+    @IBOutlet weak var slider: UISlider!
     
     var viewModel = PlayerViewModel()
     
@@ -26,6 +27,7 @@ class PlayerViewController: UIViewController {
     
     @IBAction func playPauseButtonAction(sender: AnyObject) {
         self.viewModel.playPause(playPauseButton)
+       // self.viewModel.playerObserver(slider)
     }
     
     @IBAction func nextTrackButtonAction(sender: AnyObject) {
@@ -36,5 +38,8 @@ class PlayerViewController: UIViewController {
         self.viewModel.previousTrack(playPauseButton, imageView: mainImageView, titleLabel: titileLabel, subTitleLabel: subTitle)
     }
     
+    @IBAction func sliderAction(sender: AnyObject) {
+        self.viewModel.changeTime(slider)
+    }
     
 }
