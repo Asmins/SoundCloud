@@ -61,5 +61,4 @@ class PlayerViewController: UIViewController {
         self.viewModel.player?.pause()
         self.viewModel.count = 0
     }
-    
 }

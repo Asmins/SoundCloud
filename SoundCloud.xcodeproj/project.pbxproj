@@ -15,7 +15,6 @@
 		843DB9D41D9BED0A000179B2 /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DB9D31D9BED0A000179B2 /* TrackViewModel.swift */; };
 		843DB9D61D9BFB9B000179B2 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DB9D51D9BFB9B000179B2 /* Track.swift */; };
 		844386EF1D9532980046D34D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844386EE1D9532980046D34D /* AppDelegate.swift */; };
-		844386F11D9532980046D34D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844386F01D9532980046D34D /* ViewController.swift */; };
 		844386F41D9532980046D34D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844386F21D9532980046D34D /* Main.storyboard */; };
 		844386F61D9532980046D34D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844386F51D9532980046D34D /* Assets.xcassets */; };
 		844386F91D9532980046D34D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844386F71D9532980046D34D /* LaunchScreen.storyboard */; };
@@ -48,7 +47,6 @@
 		843DB9D51D9BFB9B000179B2 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		844386EB1D9532980046D34D /* SoundCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844386EE1D9532980046D34D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		844386F01D9532980046D34D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		844386F31D9532980046D34D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		844386F51D9532980046D34D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		844386F81D9532980046D34D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 				84B379B01D95683C00AC3D72 /* Controller */,
 				84B379AD1D9562A000AC3D72 /* ViewModel */,
 				844386EE1D9532980046D34D /* AppDelegate.swift */,
-				844386F01D9532980046D34D /* ViewController.swift */,
 				844386F21D9532980046D34D /* Main.storyboard */,
 				844386F51D9532980046D34D /* Assets.xcassets */,
 				844386F71D9532980046D34D /* LaunchScreen.storyboard */,
@@ -334,7 +331,6 @@
 				849B89631D994ABC008D3A51 /* FirstViewController.swift in Sources */,
 				849B89651D994B43008D3A51 /* FirstViewModel.swift in Sources */,
 				843DB9D21D9BECFD000179B2 /* TrackViewController.swift in Sources */,
-				844386F11D9532980046D34D /* ViewController.swift in Sources */,
 				845DA5E81D9D1614002D84B2 /* PlayerViewController.swift in Sources */,
 				8482D3731D9A7E37005C57AB /* ActivityTableViewCell.swift in Sources */,
 				849B896D1D99646C008D3A51 /* HeaderTableViewCell.swift in Sources */,

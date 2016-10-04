@@ -17,12 +17,9 @@ class PlayerViewModel {
     var timeObserver: AnyObject?
     var currentSeconds = 0.0
     var currentMinutest = 0
-    
     var player:AVPlayer?
-    
     var type:String!
     var track:Int!
-    
     var avItem: AVPlayerItem?
     var time = 0.0
     var titleText:String!
@@ -30,7 +27,6 @@ class PlayerViewModel {
     var timeText = [String]()
     var url:NSURL!
     var myValue = 1
-    
     var count:Int!
     var arrayTrack = [Int]()
     var arrayUrl = [Int]()
@@ -65,10 +61,11 @@ class PlayerViewModel {
             url = "https://api.soundcloud.com/tracks/\(arrayTrack[count])/stream?client_id=7467688f360c6055fb679c3bd739acbc"
         case "track":
             url = "https://api.soundcloud.com/tracks/\(track)/stream?client_id=7467688f360c6055fb679c3bd739acbc"
+        case "track-repost":
+            url = "https://api.soundcloud.com/tracks/\(track)/stream?client_id=7467688f360c6055fb679c3bd739acbc"
         default:
             print("Error")
         }
-        
         avItem = AVPlayerItem(URL: NSURL(string:url)!)
         player = AVPlayer(playerItem: avItem)
         slider.value = 0
@@ -90,6 +87,8 @@ class PlayerViewModel {
                 case "playlist":
                     timeLabel.text = timeText[count]
                 case "track":
+                    timeLabel.text = timeText.first
+                case "track-repost":
                     timeLabel.text = timeText.first
                 default:
                     print("Error")
@@ -176,7 +175,4 @@ class PlayerViewModel {
     func updateTimeLabel(timeLabel:UILabel) {
         timeLabel.text = player?.currentTime().seconds.minuteSecondMS
     }
-    
-    
-    
 }

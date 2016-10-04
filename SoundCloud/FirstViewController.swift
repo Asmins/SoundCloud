@@ -14,14 +14,13 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let controller = segue.destinationViewController as? SoundCloudLoginViewController,
-            segueID = segue.identifier where segueID == "LoginSegue" {
-            controller.authenticator = SoundCloudAuthenticator(oauthState: self.viewModel.oauthState)
-            controller.delegate = self
+        let controller = segue.destinationViewController as? SoundCloudLoginViewController
+            if segue.identifier == "LoginSegue" {
+            controller!.authenticator = SoundCloudAuthenticator(oauthState: self.viewModel.oauthState)
+            controller!.delegate = self
         }
     }
 }
