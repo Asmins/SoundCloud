@@ -48,13 +48,16 @@ extension TrackViewController: UITableViewDataSource {
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("PlayerView") as! PlayerViewController
         let url = NSURL(string: self.viewModel.arrayTracks[indexPath.row].urlImage)
         controller.viewModel.url = url
+        controller.viewModel.type = "playlist"
+        for i in 0..<self.viewModel.arrayTracks.count{
+            controller.viewModel.timeText.append(self.viewModel.arrayTracks[i].time)
+        }
         controller.viewModel.titleText = self.viewModel.arrayTracks[indexPath.row].title
         controller.viewModel.subTitleText = self.viewModel.arrayTracks[indexPath.row].subTitle
        
         for i in 0..<self.viewModel.arrayTracks.count{
             controller.viewModel.arrayTrack.append(self.viewModel.arrayTracks[i].idTrack)
         }
-        print(self.viewModel.arrayTracks[indexPath.row].idTrack)
         controller.viewModel.count = indexPath.row
         self.navigationController?.pushViewController(controller, animated: true)
         tableView.reloadData()

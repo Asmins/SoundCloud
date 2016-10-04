@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2CE779FFBF8940F7BFFCEA4B'
+               BlueprintIdentifier = 'AAF2000919B9452C46BBF20E'
                BlueprintName = 'Pods-SoundCloud'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_SoundCloud.framework'>

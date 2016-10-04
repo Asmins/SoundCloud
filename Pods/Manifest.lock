@@ -1,29 +1,29 @@
 PODS:
   - Alamofire (3.5.0)
-  - libwebp (0.5.0):
-    - libwebp/core (= 0.5.0)
-    - libwebp/dec (= 0.5.0)
-    - libwebp/demux (= 0.5.0)
-    - libwebp/dsp (= 0.5.0)
-    - libwebp/enc (= 0.5.0)
-    - libwebp/mux (= 0.5.0)
-    - libwebp/utils (= 0.5.0)
-    - libwebp/webp (= 0.5.0)
-  - libwebp/core (0.5.0):
+  - libwebp (0.5.1):
+    - libwebp/core (= 0.5.1)
+    - libwebp/dec (= 0.5.1)
+    - libwebp/demux (= 0.5.1)
+    - libwebp/dsp (= 0.5.1)
+    - libwebp/enc (= 0.5.1)
+    - libwebp/mux (= 0.5.1)
+    - libwebp/utils (= 0.5.1)
+    - libwebp/webp (= 0.5.1)
+  - libwebp/core (0.5.1):
     - libwebp/webp
-  - libwebp/dec (0.5.0):
+  - libwebp/dec (0.5.1):
     - libwebp/core
-  - libwebp/demux (0.5.0):
+  - libwebp/demux (0.5.1):
     - libwebp/core
-  - libwebp/dsp (0.5.0):
+  - libwebp/dsp (0.5.1):
     - libwebp/core
-  - libwebp/enc (0.5.0):
+  - libwebp/enc (0.5.1):
     - libwebp/core
-  - libwebp/mux (0.5.0):
+  - libwebp/mux (0.5.1):
     - libwebp/core
-  - libwebp/utils (0.5.0):
+  - libwebp/utils (0.5.1):
     - libwebp/core
-  - libwebp/webp (0.5.0)
+  - libwebp/webp (0.5.1)
   - SDWebImage/Core (3.8.2)
   - SDWebImage/WebP (3.8.2):
     - libwebp
@@ -49,7 +49,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
-  libwebp: 68ba2001ba6806ee52837ebd77a551a0b6567e4e
+  libwebp: b9126f8982a95370cf4eaad9bb3fefd57f052c15
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwiftyJSON: 29b9f2a64f118c07e691667c2ba1efe536acfe0b
   UAProgressView: ce49aee47c14df6dc372f6fd57852f570ca97e6b

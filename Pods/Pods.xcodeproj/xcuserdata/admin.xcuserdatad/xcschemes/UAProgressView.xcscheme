@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5462E8FDC19215606848143C'
+               BlueprintIdentifier = 'F144443F85031218F17B7EF1'
                BlueprintName = 'UAProgressView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'UAProgressView.framework'>

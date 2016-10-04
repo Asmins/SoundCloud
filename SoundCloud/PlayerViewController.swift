@@ -16,6 +16,8 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var subTitle: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var editTimeLabel: UILabel!
+    @IBOutlet weak var allTimeLabel: UILabel!
     
     var viewModel = PlayerViewModel()
     
@@ -26,17 +28,17 @@ class PlayerViewController: UIViewController {
     }
     
     @IBAction func playPauseButtonAction(sender: AnyObject) {
-        self.viewModel.playPause(playPauseButton,slider: slider)
+        self.viewModel.playPause(playPauseButton,slider: slider,timeLabel: allTimeLabel)
         _ = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(PlayerViewController.updateSlide), userInfo: nil, repeats: true)
         
     }
     
     @IBAction func nextTrackButtonAction(sender: AnyObject) {
-        self.viewModel.nextTrack(playPauseButton, imageView: mainImageView, titleLabel: titileLabel, subTitleLabel: subTitle,slider: slider)
+        self.viewModel.nextTrack(playPauseButton, imageView: mainImageView, titleLabel: titileLabel, subTitleLabel: subTitle,slider: slider,timeLabel: allTimeLabel)
     }
     
     @IBAction func previousTrackButtonAction(sender: AnyObject) {
-        self.viewModel.previousTrack(playPauseButton, imageView: mainImageView, titleLabel: titileLabel, subTitleLabel: subTitle,slider: slider)
+        self.viewModel.previousTrack(playPauseButton, imageView: mainImageView, titleLabel: titileLabel, subTitleLabel: subTitle,slider: slider,timeLabel: allTimeLabel)
     }
     
     @IBAction func sliderAction(sender: AnyObject) {
@@ -46,13 +48,18 @@ class PlayerViewController: UIViewController {
     
     func updateSlide(){
         slider.value = Float((self.viewModel.player?.currentTime().seconds)!)
+        self.viewModel.updateTimeLabel(editTimeLabel)
         if self.viewModel.player?.currentItem?.duration.seconds.isNaN == false {
             slider.maximumValue = Float((self.viewModel.player?.currentItem?.duration.seconds)!)
         }
+        if self.viewModel.player?.currentTime().seconds == self.viewModel.player?.currentItem?.duration.seconds {
+            self.viewModel.nextTrack(playPauseButton, imageView: mainImageView, titleLabel: titileLabel, subTitleLabel: subTitle, slider: slider, timeLabel: allTimeLabel)
+        }
     }
-    
+
     override func viewWillDisappear(animated: Bool) {
         self.viewModel.player?.pause()
+        self.viewModel.count = 0
     }
     
 }

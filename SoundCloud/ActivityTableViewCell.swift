@@ -17,6 +17,7 @@ class ActivityTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageViewForUser: UIImageView!
     @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
     
     var idPlayList = 0
     

@@ -39,10 +39,12 @@ class MainViewModel {
     }
     
     func getData(tableView:UITableView) {
-        let url = NSURL(string:"https://api.soundcloud.com/me/activities?&oauth_token=\(token)")!
+        let url = NSURL(string:"https://api.soundcloud.com/me/activities?limit=100&oauth_token=\(token)")!
+        print(url)
         Alamofire.request(.GET, url).responseJSON{ response in
             if response.data != nil {
                 self.parseDataForActivity(response.data!)
+                self.count = self.arrayActivity.count
             }
             tableView.reloadData()
         }
@@ -51,7 +53,6 @@ class MainViewModel {
     
     func getMainImage(tableView:UITableView) {
         let url = NSURL(string:"https://api.soundcloud.com/me/playlists?oauth_token=\(token)")!
-        print(url)
         Alamofire.request(.GET,url).responseJSON{ response in
             if response.data != nil{
                 self.parseDataForGetMainImage(response.data!)
@@ -76,26 +77,30 @@ class MainViewModel {
     func parseDataForActivity(data:NSData) -> [Activity]{
         let json = JSON(data:data)
         let collection = json["collection"]
-        count = json["collection"].count
         for i in 0..<collection.count{
             let activity = Activity()
             activity.type = collection[i]["type"].stringValue
             let origin = collection[i]["origin"]
-            let user = origin["user"]
-            if activity.type == "playlist" {
-                activity.trackCount = origin["track_count"].int
-                activity.idPlaylist = origin["id"].int
-           //     print(activity.idPlaylist)
-            }else{
-                activity.trackCount = 0
+            if origin.isEmpty != true {
+                let user = origin["user"]
+                let time = origin["duration"].int
+                let formattedTime = time?.msToSeconds.minuteSecondMS
+                activity.duration = formattedTime
+                if activity.type == "playlist" {
+                    activity.trackCount = origin["track_count"].int
+                    activity.idPlaylist = origin["id"].int
+                    
+                }else{
+                    activity.trackCount = 0
+                }
+                if activity.type == "track"{
+                    activity.idTrack = origin["id"].int
+                }
+                activity.title = origin["title"].stringValue
+                activity.userName = user["username"].stringValue
+                activity.urlUser = user["avatar_url"].stringValue
+                arrayActivity.append(activity)
             }
-            if activity.type == "track"{
-                activity.idTrack = origin["id"].int
-            }
-            activity.title = origin["title"].stringValue
-            activity.userName = user["username"].stringValue
-            activity.urlUser = user["avatar_url"].stringValue
-            arrayActivity.append(activity)
         }
         return arrayActivity
     }

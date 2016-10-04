@@ -9,6 +9,7 @@
 import Foundation
 
 class Activity {
+    var duration:String!
     var type:String!
     var userName:String!
     var urlUser:String!

@@ -41,13 +41,15 @@ extension MainViewController: UITableViewDataSource {
         cell.subTitleinImageViewLabel.text = self.viewModel.arrayActivity[indexPath.row].title
         cell.titleInImageViewLabel.text = self.viewModel.arrayActivity[indexPath.row].userName
         
-        if self.viewModel.arrayActivity[indexPath.row].trackCount != 0{
+        if self.viewModel.arrayActivity[indexPath.row].trackCount != 0 {
             cell.view.hidden = false
             cell.countLabel.text = "\(self.viewModel.arrayActivity[indexPath.row].trackCount)"
             cell.idPlayList = self.viewModel.arrayActivity[indexPath.row].idPlaylist
+            cell.timeLabel.text = self.viewModel.arrayActivity[indexPath.row].duration
         }else{
             cell.view.hidden = true
             cell.countLabel.text = ""
+            cell.timeLabel.text = self.viewModel.arrayActivity[indexPath.row].duration
         }
         return cell
     }
@@ -63,10 +65,14 @@ extension MainViewController: UITableViewDataSource {
             tableView.reloadData()
         }else{
             let controller = self.storyboard?.instantiateViewControllerWithIdentifier("PlayerView") as! PlayerViewController
+            controller.viewModel.type = self.viewModel.arrayActivity[indexPath.row].type
             controller.viewModel.titleText = self.viewModel.arrayActivity[indexPath.row].title
             controller.viewModel.subTitleText = self.viewModel.arrayActivity[indexPath.row].userName
+            controller.viewModel.timeText.append(self.viewModel.arrayActivity[indexPath.row].duration)
             let url = NSURL(string: self.viewModel.arrayActivity[indexPath.row].urlUser)
             controller.viewModel.url = url
+            controller.viewModel.track = self.viewModel.arrayActivity[indexPath.row].idTrack
+
             for i in 0..<self.viewModel.arrayActivity.count{
                 if self.viewModel.arrayActivity[i].idTrack != nil{
                     controller.viewModel.arrayTrack.append(self.viewModel.arrayActivity[i].idTrack)
@@ -81,7 +87,7 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 200
+        return 230
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
