@@ -15,23 +15,14 @@ protocol SoundCloudLoginResultsDelegate: class {
 
 class SoundCloudLoginViewController: UIViewController, UIWebViewDelegate {
     
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var webViewForLogin: UIWebView!
     var authenticator: SoundCloudAuthenticator?
     weak var delegate: SoundCloudLoginResultsDelegate?
-    var webView: UIWebView? {
-        get { return self.view as? UIWebView }
-    }
-    
-    // MARK: - View Lifecycle
-    
-    override func loadView() {
-        let webView = UIWebView(frame: CGRectZero)
-        webView.delegate = self
-        webView.scalesPageToFit = true
-        self.view = webView
-    }
-    
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        webViewForLogin.sizeToFit()
         startAuthorization()
     }
     
@@ -42,10 +33,18 @@ class SoundCloudLoginViewController: UIViewController, UIWebViewDelegate {
     // MARK: - Private
     
     private func startAuthorization() {
-        if let authenticator = self.authenticator, webView = self.webView {
+        if let authenticator = self.authenticator {
             let url = authenticator.buildLoginURL()
-            webView.loadRequest(NSURLRequest(URL: url))
+            webViewForLogin.loadRequest(NSURLRequest(URL: url))
         }
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        activityIndicator.startAnimating()
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        activityIndicator.stopAnimating()
     }
     
     // MARK: - UIWebViewDelegate

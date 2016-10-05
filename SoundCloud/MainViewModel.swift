@@ -37,18 +37,20 @@ class MainViewModel {
         user.followingCount = json["followings_count"].int
     }
     
-    func getData(tableView:UITableView) {
+    func getData(tableView:UITableView,activityIndicator:UIActivityIndicatorView) {
         let url = NSURL(string:"https://api.soundcloud.com/me/activities?limit=100&oauth_token=\(token)")!
         Alamofire.request(.GET, url).responseJSON{ response in
             if response.data != nil {
-                self.parseDataForActivity(response.data!)
+                self.parseDataForActivity(response.data!,activityIndicator: activityIndicator)
                 self.count = self.arrayActivity.count
+                activityIndicator.hidesWhenStopped = true
             }
             tableView.reloadData()
         }
     }
     
-    func parseDataForActivity(data:NSData) -> [Activity]{
+    func parseDataForActivity(data:NSData,activityIndicator:UIActivityIndicatorView) -> [Activity]{
+        activityIndicator.startAnimating()
         let json = JSON(data:data)
         let collection = json["collection"]
         for i in 0..<collection.count{
@@ -84,6 +86,8 @@ class MainViewModel {
                 arrayActivity.append(activity)
             }
         }
+        activityIndicator.stopAnimating()
+        activityIndicator.hidesWhenStopped = true
         return arrayActivity
     }
     
@@ -106,7 +110,7 @@ class MainViewModel {
         tableView.registerNib(UINib(nibName: "ActivityTableViewCell",bundle:nil), forCellReuseIdentifier: "ActivityCell")
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath,activityIndicator:UIActivityIndicatorView) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell") as! ActivityTableViewCell
         cell.titleLabel.text = "\(arrayActivity[indexPath.row].userName) posted \(arrayActivity[indexPath.row].type)"
@@ -182,13 +186,13 @@ class MainViewModel {
             print("Error")
         }
     }
-    func setupMainView(tableView:UITableView,navController:UINavigationController,viewController:UIViewController) {
+    func setupMainView(tableView:UITableView,navController:UINavigationController,viewController:UIViewController,activityIndicator:UIActivityIndicatorView) {
         setupTableView(tableView)
         navController.navigationBar.barTintColor = UIColor(red:255/255, green: 116/255, blue: 0/255, alpha:1)
         viewController.title = "FEED"
         navController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         requestMe(tableView)
-        getData(tableView)
+        getData(tableView,activityIndicator: activityIndicator)
     }
     
 }

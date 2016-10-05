@@ -14,17 +14,18 @@ class TrackViewModel {
     var track = Track()
     var arrayTracks = [Track]()
 
-    func getTrack(tableView:UITableView) {
+    func getTrack(tableView:UITableView,activityIndicator:UIActivityIndicatorView) {
         let url = "https://api.soundcloud.com/playlists/\(track.idPlayList)/tracks?client_id=7467688f360c6055fb679c3bd739acbc"
         Alamofire.request(.GET, url).responseJSON{ response in
             if response.data != nil{
-                self.parseJsonTrack(response.data!)
+                self.parseJsonTrack(response.data!,activityIndicator: activityIndicator)
             }
             tableView.reloadData()
         }
     }
     
-    func parseJsonTrack(data:NSData) {
+    func parseJsonTrack(data:NSData,activityIndicator:UIActivityIndicatorView) {
+        activityIndicator.startAnimating()
         let json = JSON(data:data)
         for i in 0..<json.count{
             let track = Track()
@@ -37,6 +38,8 @@ class TrackViewModel {
             track.idTrack = json[i]["id"].int
             arrayTracks.append(track)
         }
+        activityIndicator.stopAnimating()
+        activityIndicator.hidesWhenStopped = true
     }
 }
 

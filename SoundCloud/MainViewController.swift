@@ -11,12 +11,13 @@ import SDWebImage
 
 class MainViewController: UIViewController {
     
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     var viewModel = MainViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.setupMainView(tableView, navController: navigationController!, viewController: self)
+        self.viewModel.setupMainView(tableView, navController: navigationController!, viewController: self, activityIndicator: activityIndicator)
     }
 }
 
@@ -27,7 +28,7 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return self.viewModel.tableView(tableView, cellForRowAtIndexPath: indexPath)
+        return self.viewModel.tableView(tableView, cellForRowAtIndexPath: indexPath, activityIndicator: activityIndicator)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

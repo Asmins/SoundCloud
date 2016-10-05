@@ -23,6 +23,7 @@ class FirstViewController: UIViewController {
             controller!.delegate = self
         }
     }
+
 }
 
 extension FirstViewController: SoundCloudLoginResultsDelegate {

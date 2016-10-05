@@ -9,7 +9,7 @@
         <!--Sound Cloud Login View Controller-->
         <scene sceneID="ePB-dD-GVB">
             <objects>
-                <viewController id="3j8-29-ZmE" customClass="SoundCloudLoginViewController" customModule="SoundCloud" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" id="3j8-29-ZmE" customClass="SoundCloudLoginViewController" customModule="SoundCloud" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Btw-qP-B1q"/>
                         <viewControllerLayoutGuide type="bottom" id="5En-gF-sa3"/>
@@ -17,8 +17,33 @@
                     <view key="view" contentMode="scaleToFill" id="Myp-eO-etv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZ0-yf-PO7">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3j8-29-ZmE" id="w5W-d5-wnd"/>
+                                </connections>
+                            </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Kwu-Eu-Vda">
+                                <color key="color" red="1" green="0.46733601699999999" blue="0.05952738531" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kwu-Eu-Vda" firstAttribute="top" secondItem="Btw-qP-B1q" secondAttribute="bottom" constant="315" id="8rO-Tw-ryT"/>
+                            <constraint firstAttribute="trailing" secondItem="Kwu-Eu-Vda" secondAttribute="trailing" constant="167" id="94a-by-FNa"/>
+                            <constraint firstItem="qZ0-yf-PO7" firstAttribute="leading" secondItem="Myp-eO-etv" secondAttribute="leading" id="BaK-MZ-4Si"/>
+                            <constraint firstItem="5En-gF-sa3" firstAttribute="top" secondItem="qZ0-yf-PO7" secondAttribute="bottom" id="Blg-tA-ugG"/>
+                            <constraint firstItem="qZ0-yf-PO7" firstAttribute="top" secondItem="Btw-qP-B1q" secondAttribute="bottom" id="cY9-Rz-9Rw"/>
+                            <constraint firstAttribute="trailing" secondItem="qZ0-yf-PO7" secondAttribute="trailing" id="jRz-Ek-rE7"/>
+                            <constraint firstItem="5En-gF-sa3" firstAttribute="top" secondItem="Kwu-Eu-Vda" secondAttribute="bottom" constant="315" id="n4g-mp-TIp"/>
+                            <constraint firstItem="Kwu-Eu-Vda" firstAttribute="leading" secondItem="Myp-eO-etv" secondAttribute="leading" constant="167" id="qxl-eQ-Bu5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Kwu-Eu-Vda" id="dZg-ii-lum"/>
+                        <outlet property="webViewForLogin" destination="qZ0-yf-PO7" id="Lof-LD-4zY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hw2-Qv-WhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,7 +72,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3j8-29-ZmE" kind="show" identifier="LoginSegue" action="showDetailViewController:sender:" id="4zd-Um-8ea"/>
+                                    <segue destination="3j8-29-ZmE" kind="show" identifier="LoginSegue" id="7G7-gl-l9z"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -86,17 +111,25 @@
                                     <outlet property="delegate" destination="US4-ku-8O8" id="mch-FK-gfB"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XgG-KP-p3k">
+                                <color key="color" red="1" green="0.46733601699999999" blue="0.05952738531" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XgG-KP-p3k" firstAttribute="top" secondItem="4jd-yi-TJa" secondAttribute="bottom" constant="250" id="3JI-YP-C5A"/>
+                            <constraint firstItem="XgG-KP-p3k" firstAttribute="leading" secondItem="cWI-n0-3gd" secondAttribute="leading" constant="170" id="IL7-Jj-zX0"/>
+                            <constraint firstAttribute="trailing" secondItem="XgG-KP-p3k" secondAttribute="trailing" constant="170" id="VF2-nP-YOz"/>
                             <constraint firstItem="dlj-YL-d24" firstAttribute="top" secondItem="4jd-yi-TJa" secondAttribute="bottom" constant="-64" id="d47-Oy-7Nc"/>
                             <constraint firstItem="4fO-M1-0bc" firstAttribute="top" secondItem="dlj-YL-d24" secondAttribute="bottom" id="eGf-qG-U4M"/>
+                            <constraint firstItem="4fO-M1-0bc" firstAttribute="top" secondItem="XgG-KP-p3k" secondAttribute="bottom" constant="320" id="oWp-s3-eJx"/>
                             <constraint firstAttribute="trailing" secondItem="dlj-YL-d24" secondAttribute="trailing" id="slf-Bx-s7l"/>
                             <constraint firstItem="dlj-YL-d24" firstAttribute="leading" secondItem="cWI-n0-3gd" secondAttribute="leading" id="txI-VS-Lv1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hfU-7r-Amf"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="XgG-KP-p3k" id="iWq-MP-ea3"/>
                         <outlet property="tableView" destination="dlj-YL-d24" id="u6P-bt-WjZ"/>
                     </connections>
                 </viewController>
@@ -123,16 +156,24 @@
                                     <outlet property="delegate" destination="dqk-I6-FXq" id="San-RU-9Xg"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZKo-od-WQH">
+                                <color key="color" red="1" green="0.46733601699999999" blue="0.05952738531" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Pay-Jc-RgW" firstAttribute="top" secondItem="GhI-Fr-5O2" secondAttribute="bottom" constant="-64" id="7a9-94-JlC"/>
                             <constraint firstItem="Pay-Jc-RgW" firstAttribute="leading" secondItem="7cV-gy-tAj" secondAttribute="leading" id="GF9-4u-wjf"/>
+                            <constraint firstItem="US1-FX-zrF" firstAttribute="top" secondItem="ZKo-od-WQH" secondAttribute="bottom" constant="320" id="YWd-nR-ct3"/>
+                            <constraint firstAttribute="trailing" secondItem="ZKo-od-WQH" secondAttribute="trailing" constant="170" id="prh-MY-tmO"/>
                             <constraint firstAttribute="trailing" secondItem="Pay-Jc-RgW" secondAttribute="trailing" id="t6Y-42-n3f"/>
                             <constraint firstItem="US1-FX-zrF" firstAttribute="top" secondItem="Pay-Jc-RgW" secondAttribute="bottom" id="wng-6P-VLC"/>
+                            <constraint firstItem="ZKo-od-WQH" firstAttribute="leading" secondItem="7cV-gy-tAj" secondAttribute="leading" constant="170" id="x4A-fq-vwF"/>
+                            <constraint firstItem="ZKo-od-WQH" firstAttribute="top" secondItem="GhI-Fr-5O2" secondAttribute="bottom" constant="300" id="zSV-FX-e2x"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="ZKo-od-WQH" id="vzm-Ja-n9x"/>
                         <outlet property="tableView" destination="Pay-Jc-RgW" id="1L4-3f-365"/>
                     </connections>
                 </viewController>

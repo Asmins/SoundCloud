@@ -11,6 +11,7 @@ import UIKit
 class TrackViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     var viewModel = TrackViewModel()
     
     override func viewDidLoad() {
@@ -19,7 +20,7 @@ class TrackViewController: UIViewController {
         controllerCount.viewModel.count = 0
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.setupTableView(tableView)
-        self.viewModel.getTrack(tableView)
+        self.viewModel.getTrack(tableView,activityIndicator:activityIndicator)
     }
 }
 
