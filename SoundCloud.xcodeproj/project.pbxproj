@@ -33,8 +33,23 @@
 		849B89671D995A4E008D3A51 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B89661D995A4E008D3A51 /* MainViewController.swift */; };
 		849B896B1D9962EA008D3A51 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849B896A1D9962EA008D3A51 /* HeaderTableViewCell.xib */; };
 		849B896D1D99646C008D3A51 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B896C1D99646C008D3A51 /* HeaderTableViewCell.swift */; };
+		84C4655D1DA4F91C00EC6DA5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6FD8E1DA4EC3E00639C19 /* NotificationCenter.framework */; };
+		84C465601DA4F91C00EC6DA5 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4655F1DA4F91C00EC6DA5 /* TodayViewController.swift */; };
+		84C465631DA4F91C00EC6DA5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C465611DA4F91C00EC6DA5 /* MainInterface.storyboard */; };
+		84C465671DA4F91C00EC6DA5 /* PlayerWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84C4655C1DA4F91C00EC6DA5 /* PlayerWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84C4656B1DA501DF00EC6DA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844386F51D9532980046D34D /* Assets.xcassets */; };
 		84F5F8AE1D9A95E100E52B86 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5F8AD1D9A95E100E52B86 /* Activity.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84C465651DA4F91C00EC6DA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 844386E31D9532980046D34D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84C4655B1DA4F91C00EC6DA5;
+			remoteInfo = PlayerWidget;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		84C6FD9D1DA4EC3E00639C19 /* Embed App Extensions */ = {
@@ -43,6 +58,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				84C465671DA4F91C00EC6DA5 /* PlayerWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +98,10 @@
 		849B89661D995A4E008D3A51 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		849B896A1D9962EA008D3A51 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		849B896C1D99646C008D3A51 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		84C4655C1DA4F91C00EC6DA5 /* PlayerWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PlayerWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C4655F1DA4F91C00EC6DA5 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		84C465621DA4F91C00EC6DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		84C465641DA4F91C00EC6DA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C6FD8E1DA4EC3E00639C19 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		84C6FDB81DA4F14000639C19 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		84C6FDBB1DA4F14000639C19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -97,6 +117,14 @@
 			files = (
 				848714451D954DC0001FA63D /* Alamofire.framework in Frameworks */,
 				81A29AFF1828AC2ADD1D02BF /* Pods_SoundCloud.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C465591DA4F91C00EC6DA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C4655D1DA4F91C00EC6DA5 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +149,7 @@
 			children = (
 				844386ED1D9532980046D34D /* SoundCloud */,
 				84C6FDB71DA4F14000639C19 /* Player */,
+				84C4655E1DA4F91C00EC6DA5 /* PlayerWidget */,
 				844386EC1D9532980046D34D /* Products */,
 				8DF5F78055ACB3E4511E0CFA /* Pods */,
 				6C33E2AB7C0F6BA9891B8394 /* Frameworks */,
@@ -131,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				844386EB1D9532980046D34D /* SoundCloud.app */,
+				84C4655C1DA4F91C00EC6DA5 /* PlayerWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,6 +238,16 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		84C4655E1DA4F91C00EC6DA5 /* PlayerWidget */ = {
+			isa = PBXGroup;
+			children = (
+				84C4655F1DA4F91C00EC6DA5 /* TodayViewController.swift */,
+				84C465611DA4F91C00EC6DA5 /* MainInterface.storyboard */,
+				84C465641DA4F91C00EC6DA5 /* Info.plist */,
+			);
+			path = PlayerWidget;
+			sourceTree = "<group>";
+		};
 		84C6FDB71DA4F14000639C19 /* Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,11 +285,29 @@
 			buildRules = (
 			);
 			dependencies = (
+				84C465661DA4F91C00EC6DA5 /* PBXTargetDependency */,
 			);
 			name = SoundCloud;
 			productName = SoundCloud;
 			productReference = 844386EB1D9532980046D34D /* SoundCloud.app */;
 			productType = "com.apple.product-type.application";
+		};
+		84C4655B1DA4F91C00EC6DA5 /* PlayerWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C4656A1DA4F91C00EC6DA5 /* Build configuration list for PBXNativeTarget "PlayerWidget" */;
+			buildPhases = (
+				84C465581DA4F91C00EC6DA5 /* Sources */,
+				84C465591DA4F91C00EC6DA5 /* Frameworks */,
+				84C4655A1DA4F91C00EC6DA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlayerWidget;
+			productName = PlayerWidget;
+			productReference = 84C4655C1DA4F91C00EC6DA5 /* PlayerWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -262,6 +320,10 @@
 				ORGANIZATIONNAME = Mozi;
 				TargetAttributes = {
 					844386EA1D9532980046D34D = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					84C4655B1DA4F91C00EC6DA5 = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
 					};
@@ -281,6 +343,7 @@
 			projectRoot = "";
 			targets = (
 				844386EA1D9532980046D34D /* SoundCloud */,
+				84C4655B1DA4F91C00EC6DA5 /* PlayerWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -297,6 +360,15 @@
 				849B89611D994902008D3A51 /* Logo.png in Resources */,
 				849B896B1D9962EA008D3A51 /* HeaderTableViewCell.xib in Resources */,
 				8482D3711D9A7573005C57AB /* ActivityTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C4655A1DA4F91C00EC6DA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C4656B1DA501DF00EC6DA5 /* Assets.xcassets in Resources */,
+				84C465631DA4F91C00EC6DA5 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +448,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84C465581DA4F91C00EC6DA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C465601DA4F91C00EC6DA5 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84C465661DA4F91C00EC6DA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84C4655B1DA4F91C00EC6DA5 /* PlayerWidget */;
+			targetProxy = 84C465651DA4F91C00EC6DA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		843C847C1DA4F3AF00145AA6 /* Main.storyboard */ = {
@@ -393,6 +481,14 @@
 				844386F81D9532980046D34D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		84C465611DA4F91C00EC6DA5 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84C465621DA4F91C00EC6DA5 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		84C6FDBA1DA4F14000639C19 /* MainInterface.storyboard */ = {
@@ -531,6 +627,30 @@
 			};
 			name = Release;
 		};
+		84C465681DA4F91C00EC6DA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PlayerWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Moz.SoundCloud.PlayerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		84C465691DA4F91C00EC6DA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PlayerWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Moz.SoundCloud.PlayerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -548,6 +668,15 @@
 			buildConfigurations = (
 				844386FE1D9532980046D34D /* Debug */,
 				844386FF1D9532980046D34D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C4656A1DA4F91C00EC6DA5 /* Build configuration list for PBXNativeTarget "PlayerWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C465681DA4F91C00EC6DA5 /* Debug */,
+				84C465691DA4F91C00EC6DA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
