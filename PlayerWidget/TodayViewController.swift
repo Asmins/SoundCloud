@@ -11,20 +11,44 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
         
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
+    @IBOutlet var playPauseButton: UIButton!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var subTitleLabel: UILabel!
+    
+    var viewModel = PlayerWidgetModel()
+
+    @IBAction func playPauseButton(sender: UIButton) {
+        let url = NSUserDefaults.init(suiteName: "group.playerWidget")?.valueForKey("url") as? String
+        self.viewModel.playPause(playPauseButton,url: url!)
+    }
+    @IBAction func nextTrackButton(sender: UIButton) {
+        titleLabel.text = "next track"
+    }
+  
+    @IBAction func previousTrack(sender: UIButton) {
+        titleLabel.text = "previous track"
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        if let subTitle = NSUserDefaults.init(suiteName: "group.playerWidget")?.valueForKey("subTitle"){
+            subTitleLabel.text = subTitle as? String
+        }else{
+            subTitleLabel.text = "Fucking it`s does not work"
+        }
+        
+        if let title = NSUserDefaults.init(suiteName: "group.playerWidget")?.valueForKey("title"){
+            titleLabel.text = title as? String
+        }
+    }
     
     func widgetPerformUpdate(completionHandler: ((NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        
         completionHandler(NCUpdateResult.NewData)
+    }
+    
+    func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+        let margin = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        return margin
     }
     
 }

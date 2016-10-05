@@ -38,6 +38,7 @@
 		84C465631DA4F91C00EC6DA5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C465611DA4F91C00EC6DA5 /* MainInterface.storyboard */; };
 		84C465671DA4F91C00EC6DA5 /* PlayerWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84C4655C1DA4F91C00EC6DA5 /* PlayerWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		84C4656B1DA501DF00EC6DA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844386F51D9532980046D34D /* Assets.xcassets */; };
+		84C465701DA5292A00EC6DA5 /* PlayerWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4656F1DA5292A00EC6DA5 /* PlayerWidgetModel.swift */; };
 		84F5F8AE1D9A95E100E52B86 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5F8AD1D9A95E100E52B86 /* Activity.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,10 +103,10 @@
 		84C4655F1DA4F91C00EC6DA5 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		84C465621DA4F91C00EC6DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		84C465641DA4F91C00EC6DA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C4656D1DA51BA200EC6DA5 /* SoundCloud.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoundCloud.entitlements; sourceTree = "<group>"; };
+		84C4656E1DA51BB500EC6DA5 /* PlayerWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlayerWidget.entitlements; sourceTree = "<group>"; };
+		84C4656F1DA5292A00EC6DA5 /* PlayerWidgetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerWidgetModel.swift; sourceTree = "<group>"; };
 		84C6FD8E1DA4EC3E00639C19 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		84C6FDB81DA4F14000639C19 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		84C6FDBB1DA4F14000639C19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		84C6FDBD1DA4F14000639C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F5F8AD1D9A95E100E52B86 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		88183481390DC98A25093A95 /* Pods-SoundCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCloud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCloud/Pods-SoundCloud.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				844386ED1D9532980046D34D /* SoundCloud */,
-				84C6FDB71DA4F14000639C19 /* Player */,
 				84C4655E1DA4F91C00EC6DA5 /* PlayerWidget */,
 				844386EC1D9532980046D34D /* Products */,
 				8DF5F78055ACB3E4511E0CFA /* Pods */,
@@ -168,6 +168,7 @@
 		844386ED1D9532980046D34D /* SoundCloud */ = {
 			isa = PBXGroup;
 			children = (
+				84C4656D1DA51BA200EC6DA5 /* SoundCloud.entitlements */,
 				849B89681D9962D4008D3A51 /* View */,
 				849B895B1D994631008D3A51 /* Image */,
 				84B379B01D95683C00AC3D72 /* Controller */,
@@ -241,21 +242,13 @@
 		84C4655E1DA4F91C00EC6DA5 /* PlayerWidget */ = {
 			isa = PBXGroup;
 			children = (
+				84C4656E1DA51BB500EC6DA5 /* PlayerWidget.entitlements */,
 				84C4655F1DA4F91C00EC6DA5 /* TodayViewController.swift */,
 				84C465611DA4F91C00EC6DA5 /* MainInterface.storyboard */,
 				84C465641DA4F91C00EC6DA5 /* Info.plist */,
+				84C4656F1DA5292A00EC6DA5 /* PlayerWidgetModel.swift */,
 			);
 			path = PlayerWidget;
-			sourceTree = "<group>";
-		};
-		84C6FDB71DA4F14000639C19 /* Player */ = {
-			isa = PBXGroup;
-			children = (
-				84C6FDB81DA4F14000639C19 /* TodayViewController.swift */,
-				84C6FDBA1DA4F14000639C19 /* MainInterface.storyboard */,
-				84C6FDBD1DA4F14000639C19 /* Info.plist */,
-			);
-			path = Player;
 			sourceTree = "<group>";
 		};
 		8DF5F78055ACB3E4511E0CFA /* Pods */ = {
@@ -321,11 +314,29 @@
 				TargetAttributes = {
 					844386EA1D9532980046D34D = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 94Z9M4K25X;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					84C4655B1DA4F91C00EC6DA5 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 94Z9M4K25X;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -452,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C465701DA5292A00EC6DA5 /* PlayerWidgetModel.swift in Sources */,
 				84C465601DA4F91C00EC6DA5 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,14 +499,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				84C465621DA4F91C00EC6DA5 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-		84C6FDBA1DA4F14000639C19 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84C6FDBB1DA4F14000639C19 /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -603,6 +607,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SoundCloud/SoundCloud.entitlements;
+				DEVELOPMENT_TEAM = 94Z9M4K25X;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = SoundCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -618,6 +624,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SoundCloud/SoundCloud.entitlements;
+				DEVELOPMENT_TEAM = 94Z9M4K25X;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = SoundCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -630,6 +638,8 @@
 		84C465681DA4F91C00EC6DA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PlayerWidget/PlayerWidget.entitlements;
+				DEVELOPMENT_TEAM = 94Z9M4K25X;
 				INFOPLIST_FILE = PlayerWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Moz.SoundCloud.PlayerWidget;
@@ -642,6 +652,8 @@
 		84C465691DA4F91C00EC6DA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PlayerWidget/PlayerWidget.entitlements;
+				DEVELOPMENT_TEAM = 94Z9M4K25X;
 				INFOPLIST_FILE = PlayerWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Moz.SoundCloud.PlayerWidget;

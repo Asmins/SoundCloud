@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JV-eQ-Nec">
@@ -36,6 +36,9 @@
                                 <state key="normal" image="Play">
                                     <color key="titleColor" red="1" green="0.46733601699999999" blue="0.05952738531" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="playPauseButton:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="WMf-BN-ala"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2N-ab-vgB">
                                 <constraints>
@@ -45,6 +48,9 @@
                                 <state key="normal" image="Next">
                                     <color key="titleColor" red="1" green="0.46733601699999999" blue="0.05952738531" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextTrackButton:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="jTL-OJ-VmN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXE-h9-bFi">
                                 <constraints>
@@ -54,6 +60,9 @@
                                 <state key="normal" image="Back">
                                     <color key="titleColor" red="1" green="0.46733601699999999" blue="0.05952738531" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="previousTrack:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="U7x-L6-QpJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.27611060947331079" green="0.27611060947331079" blue="0.27611060947331079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,7 +86,12 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="80"/>
+                    <size key="freeformSize" width="320" height="100"/>
+                    <connections>
+                        <outlet property="playPauseButton" destination="6PF-ck-0At" id="nvn-H1-765"/>
+                        <outlet property="subTitleLabel" destination="BYl-vP-O6p" id="oHg-zG-jb6"/>
+                        <outlet property="titleLabel" destination="3JV-eQ-Nec" id="9WV-1w-kwa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

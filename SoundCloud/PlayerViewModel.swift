@@ -67,6 +67,7 @@ class PlayerViewModel {
             print("Error")
         }
         avItem = AVPlayerItem(URL: NSURL(string:url)!)
+        NSUserDefaults.init(suiteName: "group.playerWidget")?.setValue(url, forKey: "url")
         player = AVPlayer(playerItem: avItem)
         slider.value = 0
         player?.play()
