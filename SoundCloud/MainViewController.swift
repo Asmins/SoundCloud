@@ -11,12 +11,15 @@ import SDWebImage
 
 class MainViewController: UIViewController {
     
+    @IBOutlet var heightBottomView: NSLayoutConstraint!
+    @IBOutlet var bottomView: UIView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     var viewModel = MainViewModel()
     var cache = FirstViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
+        heightBottomView.constant = 0
         self.viewModel.setupMainView(tableView, navController: navigationController!, viewController: self, activityIndicator: activityIndicator)
     }
     

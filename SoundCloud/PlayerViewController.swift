@@ -20,6 +20,7 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var allTimeLabel: UILabel!
     
     var viewModel = PlayerViewModel()
+    var delegate:PassData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +61,13 @@ class PlayerViewController: UIViewController {
     }
 
     override func viewWillDisappear(animated: Bool) {
-        self.viewModel.myValue = 0
-        self.viewModel.count = 0
+        if self.viewModel.player == nil{
+            self.viewModel.myValue = 0
+            self.viewModel.count = 0
+        }else{
+            self.viewModel.myValue = 0
+            self.viewModel.count = 0
+            self.delegate.passData(self.viewModel.player!, title: self.viewModel.titleText, subTitle: self.viewModel.subTitleText)
+        }
     }
 }

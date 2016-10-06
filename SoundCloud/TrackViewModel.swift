@@ -9,8 +9,12 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import AVFoundation
+import AVKit
 
 class TrackViewModel {
+    
+    var check = true
     var track = Track()
     var arrayTracks = [Track]()
 
@@ -40,6 +44,18 @@ class TrackViewModel {
         }
         activityIndicator.stopAnimating()
         activityIndicator.hidesWhenStopped = true
+    }
+    
+    func playPause(player:AVPlayer,button:UIButton) {
+        if check == true {
+            button.setImage(UIImage(named: "Pause"), forState: UIControlState.Normal)
+            player.play()
+            check = false
+        }else{
+            player.pause()
+            button.setImage(UIImage(named: "Play"), forState: UIControlState.Normal)
+            check = true
+        }
     }
 }
 

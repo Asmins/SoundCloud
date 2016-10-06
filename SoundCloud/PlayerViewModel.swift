@@ -26,6 +26,8 @@ class PlayerViewModel {
     var subTitleText:String!
     var timeText = [String]()
     var url:NSURL!
+    
+    var urlTrack = ""
     var myValue = 1
     var count:Int!
     var arrayTrack = [Int]()
@@ -54,20 +56,20 @@ class PlayerViewModel {
     
     func playMusic(button:UIButton,slider:UISlider) {
         player?.pause()
-        var url = ""
         
         switch type {
         case "playlist":
-            url = "https://api.soundcloud.com/tracks/\(arrayTrack[count])/stream?client_id=7467688f360c6055fb679c3bd739acbc"
+            urlTrack = "https://api.soundcloud.com/tracks/\(arrayTrack[count])/stream?client_id=7467688f360c6055fb679c3bd739acbc"
         case "track":
-            url = "https://api.soundcloud.com/tracks/\(track)/stream?client_id=7467688f360c6055fb679c3bd739acbc"
+            urlTrack = "https://api.soundcloud.com/tracks/\(track)/stream?client_id=7467688f360c6055fb679c3bd739acbc"
         case "track-repost":
-            url = "https://api.soundcloud.com/tracks/\(track)/stream?client_id=7467688f360c6055fb679c3bd739acbc"
+            urlTrack = "https://api.soundcloud.com/tracks/\(track)/stream?client_id=7467688f360c6055fb679c3bd739acbc"
         default:
             print("Error")
         }
-        avItem = AVPlayerItem(URL: NSURL(string:url)!)
-        NSUserDefaults.init(suiteName: "group.playerWidget")?.setValue(url, forKey: "url")
+        avItem = AVPlayerItem(URL: NSURL(string:urlTrack)!)
+        
+        NSUserDefaults.init(suiteName: "group.playerWidget")?.setValue(urlTrack, forKey: "url")
         player = AVPlayer(playerItem: avItem)
         slider.value = 0
         player?.play()
