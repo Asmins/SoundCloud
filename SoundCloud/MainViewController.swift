@@ -14,10 +14,23 @@ class MainViewController: UIViewController {
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     var viewModel = MainViewModel()
-    
+    var cache = FirstViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel.setupMainView(tableView, navController: navigationController!, viewController: self, activityIndicator: activityIndicator)
+    }
+    
+    @IBAction func singOutButton(sender: AnyObject) {
+        let alert = UIAlertController(title: "Sign out", message: "You want sign out ?", preferredStyle: .ActionSheet)
+        let cancel = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+        let done = UIAlertAction(title: "Sing Out", style: .Destructive, handler: {(action) in
+            self.cache.signOut()
+            let controller = self.storyboard?.instantiateViewControllerWithIdentifier("FirstViewController") as! FirstViewController
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
+        alert.addAction(done)
+        alert.addAction(cancel)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
 

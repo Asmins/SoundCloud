@@ -60,7 +60,6 @@ class SoundCloudAuthenticator {
                            "response_type" : self.oauthState.responseType.rawValue,
                            "redirect_uri" : self.oauthState.redirectUri,
                            "display" : "popup" ]
-        
         var queryItems = [NSURLQueryItem]()
         for (name, value) in parameters {
             queryItems.append(NSURLQueryItem(name: name, value: value))

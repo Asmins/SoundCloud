@@ -52,7 +52,7 @@
         <!--First View Controller-->
         <scene sceneID="1jX-6A-bQ7">
             <objects>
-                <viewController id="zKc-62-aEV" customClass="FirstViewController" customModule="SoundCloud" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" id="zKc-62-aEV" customClass="FirstViewController" customModule="SoundCloud" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y7p-5K-FWF"/>
                         <viewControllerLayoutGuide type="bottom" id="Dwe-T6-y32"/>
@@ -127,7 +127,14 @@
                             <constraint firstItem="dlj-YL-d24" firstAttribute="leading" secondItem="cWI-n0-3gd" secondAttribute="leading" id="txI-VS-Lv1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hfU-7r-Amf"/>
+                    <navigationItem key="navigationItem" id="hfU-7r-Amf">
+                        <barButtonItem key="rightBarButtonItem" title="SIGN OUT" id="jV0-29-AwI">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="singOutButton:" destination="US4-ku-8O8" id="UgG-ti-p3h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="XgG-KP-p3k" id="iWq-MP-ea3"/>
                         <outlet property="tableView" destination="dlj-YL-d24" id="u6P-bt-WjZ"/>
