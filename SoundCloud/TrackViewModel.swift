@@ -14,7 +14,7 @@ import AVKit
 
 class TrackViewModel {
     
-    var check = true
+    var check = false
     var track = Track()
     var arrayTracks = [Track]()
 

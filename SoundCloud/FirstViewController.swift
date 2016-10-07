@@ -9,7 +9,8 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-    var cache = NSUserDefaults()
+    
+    var cache = NSUserDefaults(suiteName: "group.playerWidget")
     var viewModel = FirstViewModel()
     
     override func viewDidLoad() {
@@ -17,8 +18,8 @@ class FirstViewController: UIViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-       
-        if cache.objectForKey("cache") == nil{
+        print(cache!.objectForKey("cache"))
+        if cache!.objectForKey("cache") == nil{
         let controller = segue.destinationViewController as? SoundCloudLoginViewController
             if segue.identifier == "LoginSegue" {
                 controller!.authenticator = SoundCloudAuthenticator(oauthState: self.viewModel.oauthState)
@@ -33,7 +34,7 @@ class FirstViewController: UIViewController {
     }
     
     func signOut(){
-        cache.removeObjectForKey("cache")
+        cache!.removeObjectForKey("cache")
     }
 
 }
@@ -44,7 +45,7 @@ extension FirstViewController: SoundCloudLoginResultsDelegate {
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("MainView") as! MainViewController
         let navControler = UINavigationController(rootViewController: controller)
         controller.viewModel.token = authResult.value
-        cache.setObject(authResult.value, forKey: "cache")
+        cache!.setObject(authResult.value, forKey: "cache")
         self.presentViewController(navControler, animated: true, completion: nil)
     }
     

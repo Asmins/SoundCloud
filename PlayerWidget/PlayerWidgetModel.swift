@@ -9,28 +9,24 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import AVFoundation
-import AVKit
 
 class PlayerWidgetModel {
     
-    var player:AVPlayer?
-    var item:AVPlayerItem?
+    let url = "https://api.soundcloud.com/me/activities?limit=100&oauth_token="
+    var token = ""
     
-    var myValue = 1
+    func getNewActivity(label:UILabel)  {
+        token = NSUserDefaults(suiteName: "group.playerWidget")?.objectForKey("cache") as! String
+        Alamofire.request(.GET,url + "\(token)").responseJSON{ response in
+            if response.data != nil{
+                label.text = "\(self.token)"
+                self.parseData(response.data!)
+            }
+        }
+    }
     
-    func playPause(button:UIButton,url:String){
-        if myValue == 0{
-            button.setImage(UIImage(named: "Play"), forState: UIControlState.Normal)
-            myValue = 1
-        }
-        else{
-            item = AVPlayerItem(URL: NSURL(string: url)!)
-            player = AVPlayer(playerItem: item)
-            player?.play()
-            
-            button.setImage(UIImage(named: "Pause"), forState: UIControlState.Normal)
-            myValue = 0
-        }
+    func parseData(data:NSData) {
+        let json = JSON(data: data)
+        print(json)
     }
 }
